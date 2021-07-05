@@ -2,29 +2,23 @@
 
 <h2 align="center">About me</h2>
 
-```golang
-package main
+```js
+import SoftwareDeveloper from 'rmkasendwa';
 
-import (
-	"fmt"
-)
-
-type Bio map[string]string
-
-func main() {
-	for k, v := range GetBio() {
-		fmt.Printf("%+v: %+v\n", k, v)
-	}
-}
-
-func GetBio() Bio {
-	return Bio{
-		"- ⚡ Quick bio:":                    "Quality oriented self start that is commercially-ware, evolving and enthusiastic about building stuff",
-		"- 🔭 I’m currently working on":      "awamo® GmbH as a Senior Web Developer",
-		"- 👯 I’m looking to collaborate on": "Node, Typescript, React and Docker related projects",
-		"- 💬 Ask me about":                  "Node, React, Typescript, SQL, Software Design & Architecture, Web-Dev and CI/CD Pipelines",
-		"- 📫 How to reach me:":              "https://github.com/rmkasendwa",
-	}
+class Bio extends SoftwareDeveloper {
+  name     = 'Emerson Thompson';
+  title    = 'Software Engineer';
+  company  = 'Pipoca Digital | Remote';
+  location = 'Fortaleza, CE';
+  getBio() {
+    return {
+      "- ⚡ Quick bio:":                    "Quality oriented self start that is commercially-ware, evolving and enthusiastic about building stuff",
+      "- 🔭 I’m currently working on":      "awamo® GmbH as a Senior Web Developer",
+      "- 👯 I’m looking to collaborate on": "Node, Typescript, React and Docker related projects",
+      "- 💬 Ask me about":                  "Node, React, Typescript, SQL, Software Design & Architecture, Web-Dev and CI/CD Pipelines",
+      "- 📫 How to reach me:":              "https://github.com/rmkasendwa",
+    };
+  }
 }
 ```
 
