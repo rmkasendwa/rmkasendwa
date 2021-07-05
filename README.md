@@ -1,4 +1,4 @@
-# Ronald M. Kasendwa
+<h1 align="center">Ronald M. Kasendwa</h1>
 
 <h2 align="center">About me</h2>
 
