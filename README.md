@@ -57,4 +57,4 @@ class Bio extends SoftwareDeveloper {
 
 <h4 align="center">Profile stats :musical_keyboard:</h4>
 
-<p align="center"><img src="https://github-readme-stats.vercel.app/api?username=rmkasendwa&show_icons=true&theme=synthwave" alt="Ronald M. Kasendwa :: Profile Stats" /></p>
+<p align="center"><img src="https://github-readme-stats.vercel.app/api?username=rmkasendwa&show_icons=true&theme=radical" alt="Ronald M. Kasendwa :: Profile Stats" /></p>
