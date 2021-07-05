@@ -26,6 +26,9 @@ class Bio extends SoftwareDeveloper {
 <h2 align="center">You can reach me at :alien:</h2>
 
 <p align="center">
+  <a href="mailto:kasendwaronald@gmail.com">
+    <img src="https://www.vectorlogo.zone/logos/gmail/gmail-icon.svg" alt="Ronald M. Kasendwa's LinkedIn Profile" height="30" width="30">
+  </a>
 
   <a href="https://www.linkedin.com/in/rmkasendwa/">
     <img src="https://www.vectorlogo.zone/logos/linkedin/linkedin-icon.svg" alt="Ronald M. Kasendwa's LinkedIn Profile" height="30" width="30">
