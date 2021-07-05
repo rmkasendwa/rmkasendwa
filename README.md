@@ -26,19 +26,19 @@ class Bio extends SoftwareDeveloper {
 <h2 align="center">You can reach me at :alien:</h2>
 
 <p align="center">
-  <a href="mailto:kasendwaronald@gmail.com" target="_blank">
+  <a href="mailto:kasendwaronald@gmail.com">
     <img src="https://www.vectorlogo.zone/logos/gmail/gmail-icon.svg" alt="Ronald M. Kasendwa's LinkedIn Profile" height="30" width="30">
   </a>
 
-  <a href="https://www.linkedin.com/in/rmkasendwa/" target="_blank">
+  <a href="https://www.linkedin.com/in/rmkasendwa/">
     <img src="https://www.vectorlogo.zone/logos/linkedin/linkedin-icon.svg" alt="Ronald M. Kasendwa's LinkedIn Profile" height="30" width="30">
   </a>
 
-  <a href="https://stackoverflow.com/users/4773354/ronald-m-kasendwa?tab=profile" target="_blank">
+  <a href="https://stackoverflow.com/users/4773354/ronald-m-kasendwa?tab=profile">
     <img src="https://www.vectorlogo.zone/logos/stackoverflow/stackoverflow-icon.svg" alt="Ronald M. Kasendwa's Stack Overflow Profile" height="30" width="30">
   </a>
 
-  <a href="https://stackexchange.com/users/6119325/ronald-m-kasendwa" target="_blank">
+  <a href="https://stackexchange.com/users/6119325/ronald-m-kasendwa">
     <img src="https://www.vectorlogo.zone/logos/stackexchange/stackexchange-icon.svg" alt="Ronald M. Kasendwa's Stack Exchange Profile" height="30" width="30">
   </a>
 </p>
