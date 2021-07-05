@@ -6,17 +6,18 @@
 import SoftwareDeveloper from 'rmkasendwa';
 
 class Bio extends SoftwareDeveloper {
-  name     = 'Emerson Thompson';
-  title    = 'Software Engineer';
-  company  = 'Pipoca Digital | Remote';
-  location = 'Fortaleza, CE';
-  getBio() {
+  name     = 'Ronald M. Kasendwa';
+  title    = 'Senior Web Developer';
+  company  = 'awamo® GmbH';
+  location = 'Kampala, Uganda';
+  
+  getDetails() {
     return {
       "- ⚡ Quick bio:":                    "Quality oriented self start that is commercially-ware, evolving and enthusiastic about building stuff",
-      "- 🔭 I’m currently working on":      "awamo® GmbH as a Senior Web Developer",
+      "- 🔭 I’m currently working at":      `${this.company} as ${this.title}`,
       "- 👯 I’m looking to collaborate on": "Node, Typescript, React and Docker related projects",
       "- 💬 Ask me about":                  "Node, React, Typescript, SQL, Software Design & Architecture, Web-Dev and CI/CD Pipelines",
-      "- 📫 How to reach me:":              "https://github.com/rmkasendwa",
+      "- 📫 How to reach me:":              "kasendwaronald@gmail.com",
     };
   }
 }
