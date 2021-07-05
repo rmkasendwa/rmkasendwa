@@ -2,8 +2,8 @@
 
 <h2 align="center">About me</h2>
 
-```js
-import SoftwareDeveloper from 'rmkasendwa';
+```ts
+import SoftwareDeveloper, { IBioDetails } from 'rmkasendwa';
 
 class Bio extends SoftwareDeveloper {
   name     = 'Ronald M. Kasendwa';
@@ -11,7 +11,7 @@ class Bio extends SoftwareDeveloper {
   company  = 'awamo® GmbH';
   location = 'Kampala, Uganda';
   
-  getDetails() {
+  getDetails(): IBioDetails {
     return {
       "- ⚡ Quick bio:":                    "Quality oriented self start that is commercially-ware, evolving and enthusiastic about building stuff",
       "- 🔭 I’m currently working at":      `${this.company} as ${this.title}`,
