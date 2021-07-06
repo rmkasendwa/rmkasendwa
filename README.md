@@ -13,7 +13,7 @@ class Bio extends SoftwareDeveloper {
   
   getDetails(): IBioDetails {
     return {
-      "- ⚡ Quick bio:":                    "Quality oriented self start that is commercially-ware, evolving and enthusiastic about building stuff",
+      "- ⚡ Quick bio:":                    "Quality oriented self starter that is commercially-ware, evolving and enthusiastic about building stuff",
       "- 🔭 I’m currently working at":      `${this.company} as ${this.title}`,
       "- 👯 I’m looking to collaborate on": "Node, Typescript, React and Docker related projects",
       "- 💬 Ask me about":                  "Node, React, Typescript, SQL, Software Design & Architecture, Web-Dev and CI/CD Pipelines",
