@@ -5,7 +5,7 @@
 ```ts
 import SoftwareDeveloper, { IBioDetails } from 'rmkasendwa';
 
-class Bio extends SoftwareDeveloper {
+export default class Bio extends SoftwareDeveloper {
   name     = 'Ronald M. Kasendwa';
   title    = 'Senior Web Developer';
   company  = 'awamo® GmbH';
