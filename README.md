@@ -60,4 +60,4 @@ export default class Bio extends SoftwareDeveloper {
 
 <h4 align="center">Profile stats :musical_keyboard:</h4>
 
-<p align="center"><img src="https://github-readme-stats.vercel.app/api?username=rmkasendwa&show_icons=true&theme=tokyonight" alt="Ronald M. Kasendwa :: Profile Stats" /></p>
+<p align="center"><img src="https://github-readme-streak-stats.herokuapp.com/?user=rmkasendwa&theme==tokyonight" alt="Ronald M. Kasendwa :: Profile Stats" /></p>
