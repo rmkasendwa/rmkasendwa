@@ -8,7 +8,7 @@ import SoftwareDeveloper, { IBioDetails } from 'rmkasendwa';
 export default class Bio extends SoftwareDeveloper {
   name     = 'Ronald M. Kasendwa';
   title    = 'Technical Screener';
-  company  = 'Theorem, LLC';
+  company  = 'TheoremOne, LLC';
   location = 'Kampala, Uganda';
   
   getDetails(): IBioDetails {
