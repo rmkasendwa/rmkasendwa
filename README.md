@@ -7,14 +7,11 @@ import SoftwareDeveloper, { IBioDetails } from 'rmkasendwa';
 
 export default class Bio extends SoftwareDeveloper {
   name     = 'Ronald M. Kasendwa';
-  title    = 'Technical Screener';
-  company  = 'TheoremOne, LLC';
   location = 'Kampala, Uganda';
   
   getDetails(): IBioDetails {
     return {
       "- ⚡ Quick bio:":                    "Quality oriented self motivating engineer that is commercially-ware, evolving and enthusiastic about building stuff",
-      "- 🔭 I’m currently working at":      `${this.company} as ${this.title}`,
       "- 👯 I’m looking to collaborate on": "Node, Typescript, React and Docker related projects",
       "- 💬 Ask me about":                  "Node, React, Typescript, SQL, Software Design & Architecture, Web-Dev and CI/CD Pipelines",
       "- 📫 How to reach me:":              "kasendwaronald@gmail.com",
