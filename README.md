@@ -51,10 +51,6 @@ export default class Bio extends SoftwareDeveloper {
 
 <h2 align="center">Github stats :bar_chart:</h2>
 
-<h4 align="center">Top langs :tongue:</h4>
-
-<p align="center"><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=rmkasendwa&langs_count=10&theme=tokyonight&layout=compact" alt="Ronald M. Kasendwa :: Top Langs" /></p>
-
 <h4 align="center">Profile stats :musical_keyboard:</h4>
 
 <p align="center"><img src="http://github-readme-streak-stats.herokuapp.com?user=rmkasendwa&theme=tokyonight&date_format=M%20j%5B%2C%20Y%5D" alt="Ronald M. Kasendwa :: Profile Stats" /></p>
