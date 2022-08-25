@@ -49,8 +49,6 @@ export default class Bio extends SoftwareDeveloper {
   </a>
 </p>
 
-<h2 align="center">Github stats :bar_chart:</h2>
-
-<h4 align="center">Profile stats :musical_keyboard:</h4>
+<h2 align="center">Profile stats :musical_keyboard:</h4>
 
 <p align="center"><img src="http://github-readme-streak-stats.herokuapp.com?user=rmkasendwa&theme=tokyonight&date_format=M%20j%5B%2C%20Y%5D" alt="Ronald M. Kasendwa :: Profile Stats" /></p>
