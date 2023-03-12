@@ -48,5 +48,3 @@ export default class Bio extends SoftwareDeveloper {
     <img src="http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat" alt="Ronald M. Kasendwa :: StackShare" />
   </a>
 </p>
-
-<h2 align="center">Profile stats :musical_keyboard:</h4>
