@@ -1,12 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ronald M . Kasendwa</title>
+    <title>Ronald M. Kasendwa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Ronald M. Kasendwa Portfolio" />
+    <meta
+      name="keywords"
+      content="portfolio, ronald, kasendwa, developer, engineer"
+    />
+    <meta name="author" content="Ronald M. Kasendwa" />
+    <meta property="og:title" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:description" content="" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
+    <link rel="icon" href="favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Space+Mono"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Kaushan+Script"
+      rel="stylesheet"
+    />
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Space Mono', Arial, serif;
+        min-height: 100%;
+      }
+      body {
+        background: linear-gradient(
+            150deg,
+            rgba(255, 183, 0, 0.8),
+            rgba(255, 118, 128, 0.9)
+          ),
+          url(images/cover_bg_3.jpg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 100%;
+        min-height: 100%;
+      }
+      .profile-summary {
+        color: #fff;
+        text-align: center;
+        display: inline-block;
+      }
+      .profile-thumb {
+        background-size: cover !important;
+        background-position: center center;
+        background-repeat: no-repeat;
+        position: relative;
+        height: 200px;
+        width: 200px;
+        margin: 0 auto;
+        margin-bottom: 30px;
+        border-radius: 50%;
+        background-color: #fff;
+        background-image: url(https://gravatar.com/avatar/984f85690dc0b56e65392e27b0ac5872?s=200);
+      }
+      .full-name {
+        font-family: 'Kaushan Script', cursive;
+        margin: 0;
+        font-size: 50px;
+        line-height: 1.3;
+        font-weight: 300;
+        transform: rotate(-5deg);
+        display: inline-block;
+      }
+      .full-name span {
+        padding: 4px 15px;
+        position: relative;
+      }
+      .full-name span:before,
+      .full-name span:after {
+        position: absolute;
+        top: 40px;
+        width: 30px;
+        height: 4px;
+        content: '';
+        background: #fff;
+      }
+      .full-name span:before {
+        left: 0;
+        margin-left: -30px;
+      }
+      .full-name span:after {
+        right: 0;
+        margin-right: -30px;
+      }
+    </style>
   </head>
   <body>
-    <h1>Hello there</h1>
+    <div class="profile-summary">
+      <div class="profile-thumb"></div>
+      <h1 class="full-name"><span>Ronald M. Kasendwa</span></h1>
+      <h3><span>MERN Stack Engineer</span></h3>
+    </div>
   </body>
 </html>
