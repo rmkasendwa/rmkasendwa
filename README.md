@@ -1,4 +1,5 @@
-<h1 align="center">Ronald M. Kasendwa [![committers.top badge](https://user-badge.committers.top/uganda_private/rmkasendwa.svg)](https://user-badge.committers.top/uganda_private/rmkasendwa)</h1>
+<h1 align="center">Ronald M. Kasendwa</h1>
+[![committers.top badge](https://user-badge.committers.top/uganda_private/rmkasendwa.svg)](https://user-badge.committers.top/uganda_private/rmkasendwa)
 
 <h2 align="center">About me</h2>
 
