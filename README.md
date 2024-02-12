@@ -1,5 +1,9 @@
-<h1 align="center">Ronald M. Kasendwa</h1>
-[![committers.top badge](https://user-badge.committers.top/uganda_private/rmkasendwa.svg)](https://user-badge.committers.top/uganda_private/rmkasendwa)
+<h1 align="center">
+  Ronald M. Kasendwa 
+  <a href="https://org-badge.committers.top/uganda_private/rmkasendwa">
+    <img src="https://org-badge.committers.top/uganda_private/rmkasendwa.svg" alt="Ronald M. Kasendwa's LinkedIn Profile" height="30" width="30">
+  </a>
+</h1>
 
 <h2 align="center">About me</h2>
 
