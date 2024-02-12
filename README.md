@@ -1,7 +1,7 @@
 <h1 align="center">
   Ronald M. Kasendwa 
-  <a href="https://org-badge.committers.top/uganda_private/rmkasendwa">
-    <img src="https://org-badge.committers.top/uganda_private/rmkasendwa.svg" alt="Ronald M. Kasendwa's LinkedIn Profile">
+  <a href="https://user-badge.committers.top/uganda_private/rmkasendwa" target="_blank">
+    <img src="https://user-badge.committers.top/uganda_private/rmkasendwa.svg">
   </a>
 </h1>
 
