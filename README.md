@@ -1,9 +1,4 @@
-<h1 align="center">
-  Ronald M. Kasendwa 
-  <a href="https://user-badge.committers.top/uganda_private/rmkasendwa" target="_blank">
-    <img src="https://user-badge.committers.top/uganda_private/rmkasendwa.svg">
-  </a>
-</h1>
+<h1 align="center">Ronald M. Kasendwa</h1>
 
 <h2 align="center">About me</h2>
 
