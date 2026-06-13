@@ -2,10 +2,13 @@
   "name": "rmkasendwa",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": ">=22.9.0"
+  },
   "scripts": {
-    "dev": "next dev",
+    "dev": "node scripts/run-next.mjs dev",
     "build": "next build --webpack",
-    "start": "next start",
+    "start": "node scripts/run-next.mjs start",
     "lint": "tsc --noEmit"
   },
   "dependencies": {

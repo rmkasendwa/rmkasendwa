@@ -1,0 +1,13 @@
+services:
+  web:
+    build:
+      context: .
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      HOSTNAME: 0.0.0.0
+      PORT: ${PORT:-3000}
+    ports:
+      - "${PORT:-3000}:${PORT:-3000}"
+    restart: unless-stopped
