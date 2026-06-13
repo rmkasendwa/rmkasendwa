@@ -183,21 +183,52 @@ export default async function Home() {
   const cookieStore = await cookies();
   const savedTheme = cookieStore.get("theme")?.value;
   const themePreference = isThemePreference(savedTheme) ? savedTheme : "system";
+  const siteUrl = "https://rmkasendwa.com";
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Person",
-    name: "Ronald M. Kasendwa",
-    url: "https://rmkasendwa.com",
-    jobTitle: "Product Engineer",
-    description:
-      "Product Engineer with deep professional software engineering experience.",
-    sameAs: [contact.github, contact.linkedin],
-    knowsAbout: [
-      "Product development",
-      "Software engineering",
-      "Cloud infrastructure",
-      "Developer experience",
-      "Systems architecture",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": `${siteUrl}/#person`,
+        name: "Ronald M. Kasendwa",
+        givenName: "Ronald",
+        familyName: "Kasendwa",
+        url: siteUrl,
+        jobTitle: "Product Engineer",
+        homeLocation: {
+          "@type": "Place",
+          name: "Kampala, Uganda",
+        },
+        sameAs: [contact.github, contact.linkedin],
+        knowsAbout: [
+          "Product development",
+          "Frontend engineering",
+          "Backend engineering",
+          "Cloud infrastructure",
+          "Developer experience",
+          "Systems architecture",
+        ],
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        url: siteUrl,
+        name: "Ronald M. Kasendwa",
+        description:
+          "The portfolio of Ronald M. Kasendwa, a Product Engineer in Kampala, Uganda.",
+        inLanguage: "en",
+        publisher: { "@id": `${siteUrl}/#person` },
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": `${siteUrl}/#webpage`,
+        url: siteUrl,
+        name: "Ronald M. Kasendwa — Product Engineer",
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        mainEntity: { "@id": `${siteUrl}/#person` },
+        about: { "@id": `${siteUrl}/#person` },
+        inLanguage: "en",
+      },
     ],
   };
 

@@ -6,10 +6,11 @@ const siteUrl = "https://rmkasendwa.com";
 const themePreferences = ["light", "system", "dark"] as const;
 type ThemePreference = (typeof themePreferences)[number];
 const description =
-  "Ronald M. Kasendwa is a Product Engineer who turns ideas into useful, maintainable products across product thinking, software engineering, cloud infrastructure, and developer experience.";
+  "Ronald M. Kasendwa is a Product Engineer in Kampala building useful, maintainable products across software, cloud infrastructure, and developer experience.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  applicationName: "Ronald M. Kasendwa",
   title: {
     default: "Ronald M. Kasendwa — Product Engineer",
     template: "%s — Ronald M. Kasendwa",
@@ -27,12 +28,15 @@ export const metadata: Metadata = {
   creator: "Ronald M. Kasendwa",
   alternates: { canonical: "/" },
   openGraph: {
-    type: "website",
+    type: "profile",
     locale: "en_US",
     url: siteUrl,
     siteName: "Ronald M. Kasendwa",
     title: "Ronald M. Kasendwa — Product Engineer",
     description,
+    firstName: "Ronald",
+    lastName: "Kasendwa",
+    username: "rmkasendwa",
   },
   twitter: {
     card: "summary_large_image",
@@ -42,6 +46,13 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 };
 
