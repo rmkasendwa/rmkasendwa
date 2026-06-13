@@ -1,4 +1,11 @@
+import { cookies } from "next/headers";
 import { ThemeControl } from "@/components/theme-control";
+
+type ThemePreference = "light" | "system" | "dark";
+
+function isThemePreference(value: string | undefined): value is ThemePreference {
+  return value === "light" || value === "system" || value === "dark";
+}
 
 const contact = {
   github: "https://github.com/rmkasendwa",
@@ -172,7 +179,10 @@ function SectionIntro({
   );
 }
 
-export default function Home() {
+export default async function Home() {
+  const cookieStore = await cookies();
+  const savedTheme = cookieStore.get("theme")?.value;
+  const themePreference = isThemePreference(savedTheme) ? savedTheme : "system";
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -208,7 +218,7 @@ export default function Home() {
             <a href="#approach">Approach</a>
             <a href="#contact">Contact</a>
           </nav>
-          <ThemeControl />
+          <ThemeControl initialPreference={themePreference} />
         </div>
       </header>
 

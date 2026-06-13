@@ -1,8 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import Script from "next/script";
+import { cookies } from "next/headers";
 import "./globals.css";
 
 const siteUrl = "https://rmkasendwa.com";
+const themePreferences = ["light", "system", "dark"] as const;
+type ThemePreference = (typeof themePreferences)[number];
 const description =
   "Ronald Kasendwa is a Product Engineer who turns ideas into useful, maintainable products across product thinking, software engineering, cloud infrastructure, and developer experience.";
 
@@ -54,31 +56,61 @@ const themeScript = `
   (() => {
     try {
       const saved = localStorage.getItem("theme");
-      const preference = ["light", "dark", "system"].includes(saved) ? saved : "system";
+      const cookie = document.cookie
+        .split("; ")
+        .find((entry) => entry.startsWith("theme="))
+        ?.split("=")[1];
+      const preference = ["light", "dark", "system"].includes(cookie)
+        ? cookie
+        : ["light", "dark", "system"].includes(saved)
+          ? saved
+          : "system";
       const resolved = preference === "system"
         ? (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
         : preference;
       document.documentElement.dataset.theme = resolved;
       document.documentElement.dataset.themePreference = preference;
       document.documentElement.style.colorScheme = resolved;
+
+      if (cookie !== preference) {
+        document.cookie = "theme=" + preference + "; Path=/; Max-Age=31536000; SameSite=Lax";
+      }
     } catch {
-      document.documentElement.dataset.theme =
+      const resolved =
         matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = resolved;
+      document.documentElement.style.colorScheme = resolved;
     }
   })();
 `;
 
-export default function RootLayout({
+function isThemePreference(value: string | undefined): value is ThemePreference {
+  return themePreferences.some((theme) => theme === value);
+}
+
+export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  const cookieStore = await cookies();
+  const savedTheme = cookieStore.get("theme")?.value;
+  const preference = isThemePreference(savedTheme) ? savedTheme : "system";
+  const resolvedTheme = preference === "system" ? undefined : preference;
+
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body>
-        <Script
+    <html
+      lang="en"
+      data-theme={resolvedTheme}
+      data-theme-preference={preference}
+      style={{ colorScheme: resolvedTheme }}
+      suppressHydrationWarning
+    >
+      <head>
+        <script
           id="theme-initializer"
-          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{ __html: themeScript }}
         />
+      </head>
+      <body>
         {children}
       </body>
     </html>

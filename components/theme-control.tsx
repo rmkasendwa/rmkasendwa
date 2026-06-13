@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 
 type ThemePreference = "light" | "system" | "dark";
+const themeCookieMaxAge = 60 * 60 * 24 * 365;
 
 const themes: Array<{
   value: ThemePreference;
@@ -61,15 +62,22 @@ function applyTheme(preference: ThemePreference) {
   document.documentElement.style.colorScheme = resolved;
 }
 
-export function ThemeControl() {
-  const [preference, setPreference] = useState<ThemePreference>("system");
+export function ThemeControl({
+  initialPreference = "system",
+}: {
+  initialPreference?: ThemePreference;
+}) {
+  const [preference, setPreference] =
+    useState<ThemePreference>(initialPreference);
 
   useEffect(() => {
-    const stored = localStorage.getItem("theme");
+    const stored =
+      document.documentElement.dataset.themePreference ??
+      localStorage.getItem("theme");
     const initial =
       stored === "light" || stored === "dark" || stored === "system"
         ? stored
-        : "system";
+        : initialPreference;
     const media = window.matchMedia("(prefers-color-scheme: dark)");
     const handleSystemChange = () => {
       if (document.documentElement.dataset.themePreference === "system") {
@@ -87,6 +95,7 @@ export function ThemeControl() {
   const selectTheme = (theme: ThemePreference) => {
     setPreference(theme);
     localStorage.setItem("theme", theme);
+    document.cookie = `theme=${theme}; Path=/; Max-Age=${themeCookieMaxAge}; SameSite=Lax`;
     applyTheme(theme);
   };
 
