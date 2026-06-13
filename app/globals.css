@@ -10,9 +10,37 @@
   --line: rgba(23, 25, 22, 0.14);
   --accent: #1e5c45;
   --accent-bright: #2f7c5e;
+  --hero-copy: #41453f;
+  --card-hover: rgba(255, 255, 255, 0.34);
+  --card-shadow: 0 14px 35px rgba(28, 31, 27, 0.06);
+  --technology-bg: #1c211e;
+  --technology-ink: #e9eae5;
+  --technology-muted: #a9afa9;
+  --technology-copy: #d1d4cf;
+  --technology-accent: #77b399;
+  --contact-bg: #1e5c45;
   --max-width: 1440px;
   --font-sans: "Helvetica Neue", "Inter", "Segoe UI", Arial, sans-serif;
   --font-mono: "SFMono-Regular", "Cascadia Code", "Roboto Mono", Consolas, monospace;
+}
+
+[data-theme="dark"] {
+  --paper: #111411;
+  --paper-deep: #181c18;
+  --ink: #eef0ea;
+  --muted: #9ca39c;
+  --line: rgba(238, 240, 234, 0.14);
+  --accent: #81bfa2;
+  --accent-bright: #91d0b2;
+  --hero-copy: #c4c9c3;
+  --card-hover: rgba(255, 255, 255, 0.035);
+  --card-shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
+  --technology-bg: #090c0a;
+  --technology-ink: #eef0eb;
+  --technology-muted: #aeb5ae;
+  --technology-copy: #d4d8d3;
+  --technology-accent: #91c9ae;
+  --contact-bg: #245f49;
 }
 
 * {
@@ -32,10 +60,11 @@ body {
     var(--paper);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  transition: color 240ms ease, background-color 240ms ease;
 }
 
 ::selection {
-  color: var(--paper);
+  color: #f4f2ec;
   background: var(--accent);
 }
 
@@ -74,6 +103,57 @@ a {
   gap: clamp(1.5rem, 3vw, 3rem);
   color: var(--muted);
   font-size: 0.82rem;
+}
+
+.site-header-actions {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.5rem, 3vw, 3rem);
+}
+
+.theme-control {
+  height: 34px;
+  padding: 3px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--paper) 82%, transparent);
+}
+
+.theme-control button {
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  transition: color 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+}
+
+.theme-control button:hover {
+  color: var(--ink);
+}
+
+.theme-control button[aria-pressed="true"] {
+  color: var(--paper);
+  background: var(--ink);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.14);
+}
+
+.theme-control button:focus-visible {
+  outline: 2px solid var(--accent-bright);
+  outline-offset: 2px;
+}
+
+.theme-control svg {
+  width: 14px;
+  height: 14px;
 }
 
 .site-header nav a,
@@ -155,7 +235,7 @@ a {
 
 .hero-aside > p {
   margin: 0 0 2.5rem;
-  color: #41453f;
+  color: var(--hero-copy);
   font-size: clamp(1rem, 1.3vw, 1.18rem);
   line-height: 1.65;
 }
@@ -257,9 +337,9 @@ a {
 
 .principle-card:hover {
   z-index: 1;
-  background: rgba(255, 255, 255, 0.34);
+  background: var(--card-hover);
   transform: translateY(-3px);
-  box-shadow: 0 14px 35px rgba(28, 31, 27, 0.06);
+  box-shadow: var(--card-shadow);
 }
 
 .principle-card > span,
@@ -321,16 +401,16 @@ a {
   width: auto;
   max-width: none;
   padding-inline: max(24px, calc((100vw - var(--max-width)) / 2));
-  color: #e9eae5;
-  background: #1c211e;
+  color: var(--technology-ink);
+  background: var(--technology-bg);
 }
 
 .technology .eyebrow {
-  color: #77b399;
+  color: var(--technology-accent);
 }
 
 .technology .section-copy {
-  color: #a9afa9;
+  color: var(--technology-muted);
 }
 
 .technology-grid {
@@ -356,7 +436,7 @@ a {
 
 .technology-group h3 {
   margin: 0 0 2.1rem;
-  color: #77b399;
+  color: var(--technology-accent);
   font-family: var(--font-mono);
   font-size: 0.66rem;
   font-weight: 550;
@@ -367,7 +447,7 @@ a {
 .technology-group p {
   max-width: 620px;
   margin: 0;
-  color: #d1d4cf;
+  color: var(--technology-copy);
   font-size: clamp(1rem, 1.7vw, 1.35rem);
   line-height: 1.75;
 }
@@ -436,7 +516,7 @@ blockquote p {
   max-width: none;
   padding: clamp(6rem, 11vw, 10rem) max(24px, calc((100vw - var(--max-width)) / 2));
   color: #eef0eb;
-  background: var(--accent);
+  background: var(--contact-bg);
 }
 
 .contact .eyebrow {
@@ -532,6 +612,11 @@ blockquote p {
     gap: 1.15rem;
   }
 
+  .site-header-actions {
+    gap: 1rem;
+  }
+
+  .site-header nav a:nth-child(1),
   .site-header nav a:nth-child(2) {
     display: none;
   }

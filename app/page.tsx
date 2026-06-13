@@ -1,3 +1,5 @@
+import { ThemeControl } from "@/components/theme-control";
+
 const contact = {
   github: "https://github.com/rmkasendwa",
   linkedin: "https://www.linkedin.com/in/rmkasendwa",
@@ -200,11 +202,14 @@ export default function Home() {
         <a className="wordmark" href="#top" aria-label="Ronald Kasendwa, home">
           RK<span>.</span>
         </a>
-        <nav aria-label="Main navigation">
-          <a href="#work">What I do</a>
-          <a href="#approach">Approach</a>
-          <a href="#contact">Contact</a>
-        </nav>
+        <div className="site-header-actions">
+          <nav aria-label="Main navigation">
+            <a href="#work">What I do</a>
+            <a href="#approach">Approach</a>
+            <a href="#contact">Contact</a>
+          </nav>
+          <ThemeControl />
+        </div>
       </header>
 
       <main id="top">

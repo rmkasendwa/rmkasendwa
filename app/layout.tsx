@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import "./globals.css";
 
 const siteUrl = "https://rmkasendwa.com";
@@ -42,12 +43,44 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f4f2ec" },
+    { media: "(prefers-color-scheme: dark)", color: "#111411" },
+  ],
+};
+
+const themeScript = `
+  (() => {
+    try {
+      const saved = localStorage.getItem("theme");
+      const preference = ["light", "dark", "system"].includes(saved) ? saved : "system";
+      const resolved = preference === "system"
+        ? (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+        : preference;
+      document.documentElement.dataset.theme = resolved;
+      document.documentElement.dataset.themePreference = preference;
+      document.documentElement.style.colorScheme = resolved;
+    } catch {
+      document.documentElement.dataset.theme =
+        matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+  })();
+`;
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <Script
+          id="theme-initializer"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: themeScript }}
+        />
+        {children}
+      </body>
     </html>
   );
 }
