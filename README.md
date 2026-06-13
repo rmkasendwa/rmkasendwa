@@ -1,4 +1,4 @@
-# Hi, I'm Ronald Kasendwa 👋
+# Hi, I'm Ronald M. Kasendwa 👋
 
 Product Engineer with a passion for turning ideas into products.
 

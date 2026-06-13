@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Ronald Kasendwa — Product Engineer";
+export const alt = "Ronald M. Kasendwa — Product Engineer";
 export const size = {
   width: 1200,
   height: 630,
@@ -32,7 +32,7 @@ export default function OpenGraphImage() {
             borderBottom: "1px solid rgba(23, 25, 22, 0.18)",
           }}
         >
-          <span style={{ fontSize: 24, fontWeight: 700 }}>RK.</span>
+          <span style={{ fontSize: 24, fontWeight: 700 }}>RMK.</span>
           <span
             style={{
               color: "#1e5c45",
@@ -46,7 +46,7 @@ export default function OpenGraphImage() {
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <span style={{ marginBottom: 24, color: "#62665f", fontSize: 25 }}>
-            Ronald Kasendwa
+            Ronald M. Kasendwa
           </span>
           <div
             style={{

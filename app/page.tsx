@@ -186,11 +186,11 @@ export default async function Home() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: "Ronald Kasendwa",
+    name: "Ronald M. Kasendwa",
     url: "https://rmkasendwa.com",
     jobTitle: "Product Engineer",
     description:
-      "Product Engineer with more than a decade of professional software engineering experience.",
+      "Product Engineer with deep professional software engineering experience.",
     sameAs: [contact.github, contact.linkedin],
     knowsAbout: [
       "Product development",
@@ -209,8 +209,8 @@ export default async function Home() {
       />
 
       <header className="site-header">
-        <a className="wordmark" href="#top" aria-label="Ronald Kasendwa, home">
-          RK<span>.</span>
+        <a className="wordmark" href="#top" aria-label="Ronald M. Kasendwa, home">
+          RMK<span>.</span>
         </a>
         <div className="site-header-actions">
           <nav aria-label="Main navigation">
@@ -230,7 +230,7 @@ export default async function Home() {
           </div>
           <div className="hero-grid">
             <div>
-              <p className="hero-name">Ronald Kasendwa</p>
+              <p className="hero-name">Ronald M. Kasendwa</p>
               <h1 id="hero-heading">
                 Turning ideas
                 <br />
@@ -251,7 +251,7 @@ export default async function Home() {
             </div>
           </div>
           <div className="experience-line">
-            <p>10+ years in software engineering</p>
+            <p>Deep experience in software engineering</p>
             <div aria-hidden="true" />
             <p>From first conversation to production</p>
           </div>
@@ -360,7 +360,7 @@ export default async function Home() {
       </main>
 
       <footer className="site-footer page-shell">
-        <p>© {new Date().getFullYear()} Ronald Kasendwa</p>
+        <p>© {new Date().getFullYear()} Ronald M. Kasendwa</p>
         <p>Product thinking · Engineering depth · Thoughtful execution</p>
         <a href="#top">Back to top ↑</a>
       </footer>
