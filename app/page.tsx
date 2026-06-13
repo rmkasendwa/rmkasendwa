@@ -306,6 +306,13 @@ export default async function Home() {
                 <p>{group.items.join(" · ")}</p>
               </div>
             ))}
+            <div className="technology-more">
+              <span aria-hidden="true">•••</span>
+              <p>
+                And more, as the product calls for it. The stack is a working
+                set, not a boundary.
+              </p>
+            </div>
           </div>
         </section>
 
