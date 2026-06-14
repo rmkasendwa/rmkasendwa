@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-type ThemePreference = "light" | "system" | "dark";
+type ThemePreference = 'light' | 'system' | 'dark';
 const themeCookieMaxAge = 60 * 60 * 24 * 365;
 
 const themes: Array<{
@@ -11,8 +11,8 @@ const themes: Array<{
   icon: React.ReactNode;
 }> = [
   {
-    value: "light",
-    label: "Use light theme",
+    value: 'light',
+    label: 'Use light theme',
     icon: (
       <svg aria-hidden="true" viewBox="0 0 16 16" fill="none">
         <circle cx="8" cy="8" r="2.75" stroke="currentColor" />
@@ -25,18 +25,29 @@ const themes: Array<{
     ),
   },
   {
-    value: "system",
-    label: "Use system theme",
+    value: 'system',
+    label: 'Use system theme',
     icon: (
       <svg aria-hidden="true" viewBox="0 0 16 16" fill="none">
-        <rect x="2" y="2.5" width="12" height="8.5" rx="1.5" stroke="currentColor" />
-        <path d="M5.5 13.5h5M8 11v2.5" stroke="currentColor" strokeLinecap="round" />
+        <rect
+          x="2"
+          y="2.5"
+          width="12"
+          height="8.5"
+          rx="1.5"
+          stroke="currentColor"
+        />
+        <path
+          d="M5.5 13.5h5M8 11v2.5"
+          stroke="currentColor"
+          strokeLinecap="round"
+        />
       </svg>
     ),
   },
   {
-    value: "dark",
-    label: "Use dark theme",
+    value: 'dark',
+    label: 'Use dark theme',
     icon: (
       <svg aria-hidden="true" viewBox="0 0 16 16" fill="none">
         <path
@@ -51,10 +62,10 @@ const themes: Array<{
 
 function applyTheme(preference: ThemePreference) {
   const resolved =
-    preference === "system"
-      ? window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light"
+    preference === 'system'
+      ? window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'light'
       : preference;
 
   document.documentElement.dataset.theme = resolved;
@@ -63,7 +74,7 @@ function applyTheme(preference: ThemePreference) {
 }
 
 export function ThemeControl({
-  initialPreference = "system",
+  initialPreference = 'system',
 }: {
   initialPreference?: ThemePreference;
 }) {
@@ -73,28 +84,28 @@ export function ThemeControl({
   useEffect(() => {
     const stored =
       document.documentElement.dataset.themePreference ??
-      localStorage.getItem("theme");
+      localStorage.getItem('theme');
     const initial =
-      stored === "light" || stored === "dark" || stored === "system"
+      stored === 'light' || stored === 'dark' || stored === 'system'
         ? stored
         : initialPreference;
-    const media = window.matchMedia("(prefers-color-scheme: dark)");
+    const media = window.matchMedia('(prefers-color-scheme: dark)');
     const handleSystemChange = () => {
-      if (document.documentElement.dataset.themePreference === "system") {
-        applyTheme("system");
+      if (document.documentElement.dataset.themePreference === 'system') {
+        applyTheme('system');
       }
     };
 
     setPreference(initial);
     applyTheme(initial);
-    media.addEventListener("change", handleSystemChange);
+    media.addEventListener('change', handleSystemChange);
 
-    return () => media.removeEventListener("change", handleSystemChange);
+    return () => media.removeEventListener('change', handleSystemChange);
   }, []);
 
   const selectTheme = (theme: ThemePreference) => {
     setPreference(theme);
-    localStorage.setItem("theme", theme);
+    localStorage.setItem('theme', theme);
     document.cookie = `theme=${theme}; Path=/; Max-Age=${themeCookieMaxAge}; SameSite=Lax`;
     applyTheme(theme);
   };

@@ -1,134 +1,151 @@
-import { cookies } from "next/headers";
-import { ThemeControl } from "@/components/theme-control";
+import { cookies } from 'next/headers';
+import { ThemeControl } from '@/components/theme-control';
 
-type ThemePreference = "light" | "system" | "dark";
+type ThemePreference = 'light' | 'system' | 'dark';
 
-function isThemePreference(value: string | undefined): value is ThemePreference {
-  return value === "light" || value === "system" || value === "dark";
+function isThemePreference(
+  value: string | undefined,
+): value is ThemePreference {
+  return value === 'light' || value === 'system' || value === 'dark';
 }
 
 const contact = {
-  github: "https://github.com/rmkasendwa",
-  linkedin: "https://www.linkedin.com/in/rmkasendwa",
-  email: "mailto:kasendwaronald@gmail.com",
+  github: 'https://github.com/rmkasendwa',
+  linkedin: 'https://www.linkedin.com/in/rmkasendwa',
+  email: 'mailto:kasendwaronald@gmail.com',
 };
 
 const principles = [
   {
-    number: "01",
-    title: "Simplicity beats complexity.",
-    copy: "The best system is the clearest one that solves the problem well. Complexity has to earn its place.",
+    number: '01',
+    title: 'Simplicity beats complexity.',
+    copy: 'The best system is the clearest one that solves the problem well. Complexity has to earn its place.',
   },
   {
-    number: "02",
-    title: "Shipping creates clarity.",
-    copy: "Real feedback is more valuable than imagined perfection. Deliver, learn, and improve with intent.",
+    number: '02',
+    title: 'Shipping creates clarity.',
+    copy: 'Real feedback is more valuable than imagined perfection. Deliver, learn, and improve with intent.',
   },
   {
-    number: "03",
-    title: "User value comes first.",
-    copy: "Technology is a means, not the outcome. Good decisions begin with the person using the product.",
+    number: '03',
+    title: 'User value comes first.',
+    copy: 'Technology is a means, not the outcome. Good decisions begin with the person using the product.',
   },
   {
-    number: "04",
-    title: "Maintainability matters.",
-    copy: "A product should remain understandable and adaptable long after its first release.",
+    number: '04',
+    title: 'Maintainability matters.',
+    copy: 'A product should remain understandable and adaptable long after its first release.',
   },
   {
-    number: "05",
-    title: "Automation compounds.",
-    copy: "Reliable tools, tests, and delivery pipelines return time and confidence to the whole team.",
+    number: '05',
+    title: 'Automation compounds.',
+    copy: 'Reliable tools, tests, and delivery pipelines return time and confidence to the whole team.',
   },
   {
-    number: "06",
-    title: "Products evolve.",
-    copy: "Strong products are shaped through measured iteration, not a single moment of inspiration.",
+    number: '06',
+    title: 'Products evolve.',
+    copy: 'Strong products are shaped through measured iteration, not a single moment of inspiration.',
   },
 ];
 
 const capabilities = [
   {
-    title: "Product Development",
-    copy: "Turning early conversations into clear requirements, useful scope, and a product people can put to work.",
+    title: 'Product Development',
+    copy: 'Turning early conversations into clear requirements, useful scope, and a product people can put to work.',
   },
   {
-    title: "Frontend Engineering",
-    copy: "Building fast, accessible interfaces with deliberate interaction design and resilient component systems.",
+    title: 'Frontend Engineering',
+    copy: 'Building fast, accessible interfaces with deliberate interaction design and resilient component systems.',
   },
   {
-    title: "Backend Engineering",
-    copy: "Designing dependable APIs, data models, integrations, and services around real product constraints.",
+    title: 'Backend Engineering',
+    copy: 'Designing dependable APIs, data models, integrations, and services around real product constraints.',
   },
   {
-    title: "Cloud Infrastructure",
-    copy: "Creating practical, observable environments that make deployment routine and operations predictable.",
+    title: 'Cloud Infrastructure',
+    copy: 'Creating practical, observable environments that make deployment routine and operations predictable.',
   },
   {
-    title: "Developer Experience",
-    copy: "Improving the path from idea to production through tooling, automation, documentation, and sensible defaults.",
+    title: 'Developer Experience',
+    copy: 'Improving the path from idea to production through tooling, automation, documentation, and sensible defaults.',
   },
   {
-    title: "Architecture & Systems Design",
+    title: 'Architecture & Systems Design',
     copy: "Making technical decisions that balance today's needs with the product's ability to grow and change.",
   },
 ];
 
 const technologies = [
   {
-    category: "Frontend",
+    category: 'Frontend',
     items: [
-      "TypeScript",
-      "JavaScript",
-      "React",
-      "Next.js",
-      "SolidJS",
-      "Angular",
-      "Tailwind CSS",
-      "Material UI",
+      'TypeScript',
+      'JavaScript',
+      'React',
+      'Next.js',
+      'SolidJS',
+      'Angular',
+      'Tailwind CSS',
+      'Material UI',
     ],
   },
   {
-    category: "Backend",
-    items: ["Node.js", "NestJS", "Express", "TsED", "REST APIs", "GraphQL"],
+    category: 'Backend',
+    items: ['Node.js', 'NestJS', 'Express', 'TsED', 'REST APIs', 'GraphQL'],
   },
   {
-    category: "Data",
-    items: ["PostgreSQL", "MongoDB", "ClickHouse"],
+    category: 'Data',
+    items: ['PostgreSQL', 'MongoDB', 'ClickHouse'],
   },
   {
-    category: "Infrastructure",
+    category: 'Infrastructure',
     items: [
-      "AWS",
-      "Docker",
-      "Pulumi",
-      "Terraform",
-      "ECS",
-      "Route53",
-      "RDS",
-      "ECR",
-      "CloudWatch",
+      'AWS',
+      'Docker',
+      'Pulumi',
+      'Terraform',
+      'ECS',
+      'Route53',
+      'RDS',
+      'ECR',
+      'CloudWatch',
     ],
   },
   {
-    category: "Tooling",
+    category: 'Tooling',
     items: [
-      "Git",
-      "GitHub Actions",
-      "pnpm",
-      "npm",
-      "Prisma",
-      "React Query",
-      "Jest",
+      'Git',
+      'GitHub Actions',
+      'pnpm',
+      'npm',
+      'Prisma',
+      'React Query',
+      'Jest',
     ],
   },
 ];
 
 const approach = [
-  ["Understand", "Find the real user problem before prescribing a technical answer."],
-  ["Define", "Align product goals, business constraints, and engineering reality."],
-  ["Build", "Deliver the smallest complete version that creates meaningful value."],
-  ["Operate", "Make quality, deployment, and observability part of the product."],
-  ["Evolve", "Use evidence from production to decide what the product needs next."],
+  [
+    'Understand',
+    'Find the real user problem before prescribing a technical answer.',
+  ],
+  [
+    'Define',
+    'Align product goals, business constraints, and engineering reality.',
+  ],
+  [
+    'Build',
+    'Deliver the smallest complete version that creates meaningful value.',
+  ],
+  [
+    'Operate',
+    'Make quality, deployment, and observability part of the product.',
+  ],
+  [
+    'Evolve',
+    'Use evidence from production to decide what the product needs next.',
+  ],
 ];
 
 function ArrowIcon() {
@@ -146,14 +163,14 @@ function SocialLink({
   href: string;
   children: React.ReactNode;
 }) {
-  const external = href.startsWith("http");
+  const external = href.startsWith('http');
 
   return (
     <a
       className="social-link"
       href={href}
-      target={external ? "_blank" : undefined}
-      rel={external ? "noreferrer" : undefined}
+      target={external ? '_blank' : undefined}
+      rel={external ? 'noreferrer' : undefined}
     >
       <span>{children}</span>
       <ArrowIcon />
@@ -181,53 +198,53 @@ function SectionIntro({
 
 export default async function Home() {
   const cookieStore = await cookies();
-  const savedTheme = cookieStore.get("theme")?.value;
-  const themePreference = isThemePreference(savedTheme) ? savedTheme : "system";
-  const siteUrl = "https://rmkasendwa.com";
+  const savedTheme = cookieStore.get('theme')?.value;
+  const themePreference = isThemePreference(savedTheme) ? savedTheme : 'system';
+  const siteUrl = 'https://rmkasendwa.com';
   const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
+    '@context': 'https://schema.org',
+    '@graph': [
       {
-        "@type": "Person",
-        "@id": `${siteUrl}/#person`,
-        name: "Ronald M. Kasendwa",
-        givenName: "Ronald",
-        familyName: "Kasendwa",
+        '@type': 'Person',
+        '@id': `${siteUrl}/#person`,
+        name: 'Ronald M. Kasendwa',
+        givenName: 'Ronald',
+        familyName: 'Kasendwa',
         url: siteUrl,
-        jobTitle: "Product Engineer",
+        jobTitle: 'Product Engineer',
         homeLocation: {
-          "@type": "Place",
-          name: "Kampala, Uganda",
+          '@type': 'Place',
+          name: 'Kampala, Uganda',
         },
         sameAs: [contact.github, contact.linkedin],
         knowsAbout: [
-          "Product development",
-          "Frontend engineering",
-          "Backend engineering",
-          "Cloud infrastructure",
-          "Developer experience",
-          "Systems architecture",
+          'Product development',
+          'Frontend engineering',
+          'Backend engineering',
+          'Cloud infrastructure',
+          'Developer experience',
+          'Systems architecture',
         ],
       },
       {
-        "@type": "WebSite",
-        "@id": `${siteUrl}/#website`,
+        '@type': 'WebSite',
+        '@id': `${siteUrl}/#website`,
         url: siteUrl,
-        name: "Ronald M. Kasendwa",
+        name: 'Ronald M. Kasendwa',
         description:
-          "The portfolio of Ronald M. Kasendwa, a Product Engineer in Kampala, Uganda.",
-        inLanguage: "en",
-        publisher: { "@id": `${siteUrl}/#person` },
+          'The portfolio of Ronald M. Kasendwa, a Product Engineer in Kampala, Uganda.',
+        inLanguage: 'en',
+        publisher: { '@id': `${siteUrl}/#person` },
       },
       {
-        "@type": "ProfilePage",
-        "@id": `${siteUrl}/#webpage`,
+        '@type': 'ProfilePage',
+        '@id': `${siteUrl}/#webpage`,
         url: siteUrl,
-        name: "Ronald M. Kasendwa — Product Engineer",
-        isPartOf: { "@id": `${siteUrl}/#website` },
-        mainEntity: { "@id": `${siteUrl}/#person` },
-        about: { "@id": `${siteUrl}/#person` },
-        inLanguage: "en",
+        name: 'Ronald M. Kasendwa — Product Engineer',
+        isPartOf: { '@id': `${siteUrl}/#website` },
+        mainEntity: { '@id': `${siteUrl}/#person` },
+        about: { '@id': `${siteUrl}/#person` },
+        inLanguage: 'en',
       },
     ],
   };
@@ -240,7 +257,11 @@ export default async function Home() {
       />
 
       <header className="site-header">
-        <a className="wordmark" href="#top" aria-label="Ronald M. Kasendwa, home">
+        <a
+          className="wordmark"
+          href="#top"
+          aria-label="Ronald M. Kasendwa, home"
+        >
           RMK<span>.</span>
         </a>
         <div className="site-header-actions">
@@ -288,7 +309,10 @@ export default async function Home() {
           </div>
         </section>
 
-        <section className="philosophy page-shell" aria-labelledby="philosophy-title">
+        <section
+          className="philosophy page-shell"
+          aria-labelledby="philosophy-title"
+        >
           <SectionIntro
             eyebrow="Engineering philosophy"
             title="Good products are built on clear decisions."
@@ -307,7 +331,11 @@ export default async function Home() {
           </div>
         </section>
 
-        <section className="capabilities page-shell" id="work" aria-labelledby="work-title">
+        <section
+          className="capabilities page-shell"
+          id="work"
+          aria-labelledby="work-title"
+        >
           <SectionIntro
             eyebrow="What I do"
             title="One product. Every layer."
@@ -316,7 +344,7 @@ export default async function Home() {
           <div className="capability-list">
             {capabilities.map((capability, index) => (
               <article className="capability-row" key={capability.title}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
+                <span>{String(index + 1).padStart(2, '0')}</span>
                 <h3>{capability.title}</h3>
                 <p>{capability.copy}</p>
               </article>
@@ -324,7 +352,10 @@ export default async function Home() {
           </div>
         </section>
 
-        <section className="technology page-shell" aria-labelledby="technology-title">
+        <section
+          className="technology page-shell"
+          aria-labelledby="technology-title"
+        >
           <SectionIntro
             eyebrow="Technical range"
             title="Tools chosen for the product, not the other way around."
@@ -334,7 +365,7 @@ export default async function Home() {
             {technologies.map((group) => (
               <div className="technology-group" key={group.category}>
                 <h3>{group.category}</h3>
-                <p>{group.items.join(" · ")}</p>
+                <p>{group.items.join(' · ')}</p>
               </div>
             ))}
             <div className="technology-more">
@@ -347,7 +378,11 @@ export default async function Home() {
           </div>
         </section>
 
-        <section className="approach page-shell" id="approach" aria-labelledby="approach-title">
+        <section
+          className="approach page-shell"
+          id="approach"
+          aria-labelledby="approach-title"
+        >
           <div className="approach-heading">
             <SectionIntro
               eyebrow="Product mindset"
@@ -361,7 +396,7 @@ export default async function Home() {
           <ol className="approach-list">
             {approach.map(([title, copy], index) => (
               <li key={title}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
+                <span>{String(index + 1).padStart(2, '0')}</span>
                 <h3>{title}</h3>
                 <p>{copy}</p>
               </li>
@@ -375,7 +410,11 @@ export default async function Home() {
           </blockquote>
         </section>
 
-        <section className="contact page-shell" id="contact" aria-labelledby="contact-title">
+        <section
+          className="contact page-shell"
+          id="contact"
+          aria-labelledby="contact-title"
+        >
           <p className="eyebrow">Start a conversation</p>
           <div className="contact-grid">
             <h2 id="contact-title">
@@ -386,7 +425,8 @@ export default async function Home() {
             <div>
               <p>
                 I enjoy conversations about products, engineering, startups, and
-                the difficult work of turning a promising idea into something real.
+                the difficult work of turning a promising idea into something
+                real.
               </p>
               <a className="email-cta" href={contact.email}>
                 kasendwaronald@gmail.com
