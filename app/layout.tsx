@@ -1,46 +1,46 @@
-import type { Metadata, Viewport } from "next";
-import { cookies } from "next/headers";
-import "./globals.css";
+import type { Metadata, Viewport } from 'next';
+import { cookies } from 'next/headers';
+import './globals.css';
 
-const siteUrl = "https://rmkasendwa.com";
-const themePreferences = ["light", "system", "dark"] as const;
+const siteUrl = 'https://rmkasendwa.com';
+const themePreferences = ['light', 'system', 'dark'] as const;
 type ThemePreference = (typeof themePreferences)[number];
 const description =
-  "Ronald M. Kasendwa is a Product Engineer in Kampala building useful, maintainable products across software, cloud infrastructure, and developer experience.";
+  'Ronald M. Kasendwa is a Product Engineer in Kampala building useful, maintainable products across software, cloud infrastructure, and developer experience.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  applicationName: "Ronald M. Kasendwa",
+  applicationName: 'Ronald M. Kasendwa',
   title: {
-    default: "Ronald M. Kasendwa — Product Engineer",
-    template: "%s — Ronald M. Kasendwa",
+    default: 'Ronald M. Kasendwa — Product Engineer',
+    template: '%s — Ronald M. Kasendwa',
   },
   description,
   keywords: [
-    "Ronald M. Kasendwa",
-    "Product Engineer",
-    "Software Engineer",
-    "Product Development",
-    "Cloud Infrastructure",
-    "Systems Architecture",
+    'Ronald M. Kasendwa',
+    'Product Engineer',
+    'Software Engineer',
+    'Product Development',
+    'Cloud Infrastructure',
+    'Systems Architecture',
   ],
-  authors: [{ name: "Ronald M. Kasendwa", url: siteUrl }],
-  creator: "Ronald M. Kasendwa",
-  alternates: { canonical: "/" },
+  authors: [{ name: 'Ronald M. Kasendwa', url: siteUrl }],
+  creator: 'Ronald M. Kasendwa',
+  alternates: { canonical: '/' },
   openGraph: {
-    type: "profile",
-    locale: "en_US",
+    type: 'profile',
+    locale: 'en_US',
     url: siteUrl,
-    siteName: "Ronald M. Kasendwa",
-    title: "Ronald M. Kasendwa — Product Engineer",
+    siteName: 'Ronald M. Kasendwa',
+    title: 'Ronald M. Kasendwa — Product Engineer',
     description,
-    firstName: "Ronald",
-    lastName: "Kasendwa",
-    username: "rmkasendwa",
+    firstName: 'Ronald',
+    lastName: 'Kasendwa',
+    username: 'rmkasendwa',
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Ronald M. Kasendwa — Product Engineer",
+    card: 'summary_large_image',
+    title: 'Ronald M. Kasendwa — Product Engineer',
     description,
   },
   robots: {
@@ -49,21 +49,21 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
     },
   },
 };
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f4f2ec" },
-    { media: "(prefers-color-scheme: dark)", color: "#111411" },
+    { media: '(prefers-color-scheme: light)', color: '#f4f2ec' },
+    { media: '(prefers-color-scheme: dark)', color: '#111411' },
   ],
 };
 
-const themeScript = `
+const themeScript = /* javascript */ `
   (() => {
     try {
       const saved = localStorage.getItem("theme");
@@ -95,7 +95,9 @@ const themeScript = `
   })();
 `;
 
-function isThemePreference(value: string | undefined): value is ThemePreference {
+function isThemePreference(
+  value: string | undefined,
+): value is ThemePreference {
   return themePreferences.some((theme) => theme === value);
 }
 
@@ -103,9 +105,9 @@ export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   const cookieStore = await cookies();
-  const savedTheme = cookieStore.get("theme")?.value;
-  const preference = isThemePreference(savedTheme) ? savedTheme : "system";
-  const resolvedTheme = preference === "system" ? undefined : preference;
+  const savedTheme = cookieStore.get('theme')?.value;
+  const preference = isThemePreference(savedTheme) ? savedTheme : 'system';
+  const resolvedTheme = preference === 'system' ? undefined : preference;
 
   return (
     <html
@@ -121,9 +123,7 @@ export default async function RootLayout({
           dangerouslySetInnerHTML={{ __html: themeScript }}
         />
       </head>
-      <body>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
