@@ -34,14 +34,6 @@ I enjoy building products that are fast, scalable, and enjoyable to use.
 
 ---
 
-## 🛠️ Tech Stack
-
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=ts,js,react,nextjs,solidjs,angular,nodejs,nestjs,postgres,mongodb,docker,aws,terraform,git,github,vscode" />
-</p>
-
----
-
 <div align="center">
 
 ### Principles
