@@ -1,57 +1,59 @@
-# Hi, I'm Ronald M. Kasendwa 👋
+<div align="center">
 
-Product Engineer with a passion for turning ideas into products.
+# 👋 Hi, I'm Ronald M. Kasendwa
 
-I work across the entire product lifecycle, combining product thinking, software engineering, cloud infrastructure, and developer experience to build products that people enjoy using. I enjoy solving problems, simplifying complexity, and building systems that remain maintainable as they grow.
+### Product Engineer
 
-## What I Do
+Building products, not just software.
 
-- Design and build web applications
-- Develop scalable backend systems and APIs
-- Create intuitive user experiences
-- Build cloud-native infrastructure
-- Improve developer experience through tools and automation
-- Turn ideas into production-ready products
+[🌐 Website](https://rmkasendwa.com/) • [💼 LinkedIn](https://www.linkedin.com/in/rmkasendwa/) • [🐙 GitHub](https://github.com/rmkasendwa)
 
-## Principles
+<br />
 
-- Simplicity beats complexity
-- Shipping beats perfection
-- User value comes first
-- Maintainability matters
-- Automation is an investment
-- Good products evolve through iteration
+<p>
+I turn ideas into products through software engineering, cloud infrastructure,
+developer experience, and AI.
+</p>
 
-## Technologies
+<p>
+From frontend experiences and backend systems to cloud architecture and deployment,
+I enjoy building products that are fast, scalable, and enjoyable to use.
+</p>
 
-### Frontend
-
-TypeScript • JavaScript • React • Next.js • SolidJS • Angular • Tailwind CSS • Material UI
-
-### Backend
-
-Node.js • NestJS • Express • TsED • REST APIs • GraphQL
-
-### Databases
-
-PostgreSQL • MongoDB • ClickHouse
-
-### Cloud & Infrastructure
-
-AWS • Docker • Pulumi • Terraform • ECS • Route53 • RDS • ECR • CloudWatch
-
-### Tooling
-
-Git • GitHub Actions • pnpm • npm • Prisma • React Query • Jest
-
-### Interests
-
-Product Engineering • Developer Experience • Cloud Architecture • Open Source • Artificial Intelligence
-
-## Philosophy
-
-I believe the best products come from understanding the problem deeply, keeping solutions simple, and continuously improving through feedback and iteration. Technology is a tool; the real goal is creating value for the people who use what we build.
+</div>
 
 ---
 
-> Building products, not just software.
+## 🚀 What I Do
+
+- Build web and mobile applications
+- Design scalable backend systems and APIs
+- Create cloud-native infrastructure
+- Improve developer experience through tooling and automation
+- Turn ideas into production-ready products
+
+---
+
+## 🛠️ Tech Stack
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=ts,js,react,nextjs,solidjs,angular,nodejs,nestjs,postgres,mongodb,docker,aws,terraform,git,github,vscode" />
+</p>
+
+---
+
+## 📈 GitHub Activity
+
+<p align="center">
+  <img height="170" src="https://github-readme-stats.vercel.app/api?username=rmkasendwa&show_icons=true&hide_border=true&rank_icon=github" />
+</p>
+
+---
+
+<div align="center">
+
+### Principles
+
+Simplicity • Maintainability • Automation • Continuous Improvement
+
+</div>
