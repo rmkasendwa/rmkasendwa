@@ -137,6 +137,49 @@ const selectedWork = [
   },
 ];
 
+const openSourceTools = [
+  {
+    name: 'airtable-client',
+    description:
+      'A lightweight TypeScript SDK for Airtable workflows and data access.',
+    type: 'SDK',
+    link: '#',
+  },
+  {
+    name: 'mui-extensions / @infinite-debugger/react-mui',
+    description:
+      'A compact set of MUI-focused extensions for faster UI composition.',
+    type: 'Component library',
+    link: '#',
+  },
+  {
+    name: '@infinite-debugger/swagger-to-ts',
+    description:
+      'A utility for turning Swagger schemas into TypeScript interfaces.',
+    type: 'Utility',
+    link: '#',
+  },
+  {
+    name: 'infinite-debugger/rmk-utils',
+    description: 'A handful of practical helpers for everyday developer tasks.',
+    type: 'Utility',
+    link: '#',
+  },
+  {
+    name: 'SVG Map Extra',
+    description: 'A small utility for making richer SVG-based map experiences.',
+    type: 'Utility',
+    link: '#',
+  },
+  {
+    name: 'cropit contribution',
+    description:
+      'A thoughtful contribution to a project focused on better image cropping flows.',
+    type: 'Contribution',
+    link: '#',
+  },
+];
+
 const technologies = [
   {
     category: 'Frontend',
@@ -462,6 +505,34 @@ export default async function Home() {
               developer tooling, automation platforms, internal products,
               consulting engagements, and open source projects.
             </p>
+          </div>
+        </section>
+
+        <section
+          className="open-source page-shell"
+          aria-labelledby="open-source-title"
+        >
+          <SectionIntro
+            eyebrow="Open source & developer tools"
+            title="Tools and libraries built to make engineering work easier."
+            copy="A compact set of projects focused on reducing friction, tightening feedback loops, and keeping implementation moving with less repetition."
+          />
+          <div className="open-source-grid">
+            {openSourceTools.map((tool) => (
+              <article className="open-source-card" key={tool.name}>
+                <div className="tool-heading">
+                  <h3>{tool.name}</h3>
+                  <span className="tool-type">{tool.type}</span>
+                </div>
+                <p className="tool-description">{tool.description}</p>
+                {tool.link ? (
+                  <a className="tool-link" href={tool.link}>
+                    View placeholder
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                ) : null}
+              </article>
+            ))}
           </div>
         </section>
 
