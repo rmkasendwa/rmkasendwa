@@ -75,6 +75,104 @@ const capabilities = [
   },
 ];
 
+const selectedWork = [
+  {
+    name: 'Skattebasserne',
+    category: 'AI Product',
+    description:
+      'A tax advisory experience that helped users navigate complex rules through a clearer, more explainable workflow.',
+    contribution:
+      'I owned the product experience end to end, shaping the interaction model, integrating AI-assisted guidance, and making the system dependable enough for real-world use.',
+    technologies: ['TypeScript', 'Node.js', 'PostgreSQL', 'AI workflows'],
+  },
+  {
+    name: 'Locals',
+    category: 'Creator Platform',
+    description:
+      'A creator-first platform for building direct communities around content, interaction, and sustained audience connection.',
+    contribution:
+      'I shaped the core product experience and the interface system, helping turn a broad idea into a focused, usable product.',
+    technologies: ['React', 'Next.js', 'TypeScript', 'Product design'],
+  },
+  {
+    name: 'awamo360',
+    category: 'FinTech Platform',
+    description:
+      'A banking platform for small businesses that brought operational workflows and financial activity into a single system.',
+    contribution:
+      'I worked across the product surface and platform services to support transactional flows with strong architecture and careful implementation.',
+    technologies: ['React', 'NestJS', 'REST APIs', 'AWS'],
+  },
+  {
+    name: 'Formula.Monks Topology',
+    category: 'Automation Platform',
+    description:
+      'An automation platform that helped teams coordinate work across systems without sacrificing clarity or control.',
+    contribution:
+      'I helped translate complex automation requirements into a dependable product structure, balancing technical depth with day-to-day usability.',
+    technologies: ['TypeScript', 'Docker', 'Pulumi', 'Event systems'],
+  },
+  {
+    name: 'Traccar SaaS',
+    category: 'Fleet Management Platform',
+    description:
+      'A fleet operations product built to give teams a practical view of vehicles, movement, and operational oversight.',
+    contribution:
+      'I contributed to the product and platform layer, improving reliability and making the experience more useful for day-to-day operations.',
+    technologies: ['React', 'Node.js', 'PostgreSQL', 'Cloud services'],
+  },
+  {
+    name: 'Sliding Tiles',
+    category: 'Consumer Product',
+    description:
+      'A lightweight multiplayer game designed for quick, social rounds and a simple, immediate form of play.',
+    contribution:
+      'I built the real-time interaction layer and the product experience that made the game feel responsive and easy to pick up.',
+    technologies: ['React', 'WebSockets', 'Realtime', 'Game logic'],
+  },
+  {
+    name: 'Airtable Client',
+    category: 'Developer SDK',
+    description:
+      'A developer-facing client that made working with Airtable data more approachable through a clear and consistent interface.',
+    contribution:
+      'I designed and implemented the client surface and integration patterns that made the SDK practical to adopt and maintain.',
+    technologies: ['TypeScript', 'SDK design', 'APIs', 'Developer tooling'],
+  },
+  {
+    name: 'Dubai Chamber Match',
+    category: 'Enterprise Platform',
+    description:
+      'An enterprise matching platform built to support meaningful business connections in a structured, trustworthy environment.',
+    contribution:
+      'I worked closely with stakeholders and engineering teams to build a system that balanced business needs with durable architecture.',
+    technologies: ['React', 'Node.js', 'Enterprise workflows', 'Integration'],
+  },
+  {
+    name: 'PIMIS',
+    category: 'Government Platform',
+    description:
+      'A government platform supporting information management and operational workflows where consistency and maintainability matter deeply.',
+    contribution:
+      'I contributed to a system that needed to be reliable, clear, and maintainable in a sensitive public-sector context.',
+    technologies: [
+      'TypeScript',
+      'System design',
+      'Government workflows',
+      'Cloud infrastructure',
+    ],
+  },
+  {
+    name: 'MUI Extensions',
+    category: 'Developer Tooling',
+    description:
+      'An open source TypeScript library that extends Material UI with production-ready components and utilities developed from years of building commercial React applications. The project focuses on improving developer experience, consistency, maintainability, and development speed in enterprise-grade interfaces.',
+    contribution:
+      'I designed, implemented, documented, and maintained the component library, creating reusable UI building blocks and utilities that accelerate development across multiple products.',
+    technologies: ['TypeScript', 'React', 'Material UI', 'Storybook', 'npm'],
+  },
+];
+
 const technologies = [
   {
     category: 'Frontend',
@@ -349,6 +447,56 @@ export default async function Home() {
                 <p>{capability.copy}</p>
               </article>
             ))}
+          </div>
+        </section>
+
+        <section
+          className="selected-work page-shell"
+          aria-labelledby="selected-work-title"
+        >
+          <SectionIntro
+            eyebrow="Selected work"
+            title="Representative work across products, platforms, and systems."
+          />
+          <p className="selected-work-intro">
+            A small selection of products, platforms, and engineering work from
+            more than a decade of building software across fintech, creator
+            platforms, AI, government, enterprise systems, developer tooling,
+            and cloud infrastructure.
+          </p>
+          <div className="selected-work-grid">
+            {selectedWork.map((project) => (
+              <article className="selected-work-card" key={project.name}>
+                <div className="project-meta">
+                  <p className="project-category">{project.category}</p>
+                  <h3>{project.name}</h3>
+                </div>
+                <p className="project-description">{project.description}</p>
+                <div className="project-contribution">
+                  <p className="project-label">
+                    Primary engineering contribution
+                  </p>
+                  <p>{project.contribution}</p>
+                </div>
+                <ul
+                  className="project-tags"
+                  aria-label={`${project.name} technologies`}
+                >
+                  {project.technologies.map((tag) => (
+                    <li key={tag}>{tag}</li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+          <div className="selected-work-close">
+            <p className="selected-work-close-line">And many more.</p>
+            <p className="selected-work-footnote">
+              This is a curated selection from a much broader body of work that
+              includes enterprise software, government systems, fintech, AI,
+              developer tooling, automation platforms, internal products,
+              consulting engagements, and open source projects.
+            </p>
           </div>
         </section>
 
