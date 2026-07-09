@@ -170,6 +170,9 @@ export default async function Home() {
                 <SocialLink href={contact.github}>GitHub</SocialLink>
                 <SocialLink href={contact.linkedin}>LinkedIn</SocialLink>
                 <SocialLink href={contact.email}>Email</SocialLink>
+                <SocialLink href="https://drive.google.com/file/d/1cLoltLQBoGfKqyHL9CoLE6y1Hg8_jTJZ/view?usp=sharing">
+                  View Resume
+                </SocialLink>
               </div>
             </div>
           </div>
@@ -378,10 +381,15 @@ export default async function Home() {
                 I enjoy conversations about products, engineering, startups, and
                 the hard work of turning an idea into something real.
               </p>
-              <a className="email-cta" href={contact.email}>
-                kasendwaronald@gmail.com
-                <ArrowIcon />
-              </a>
+              <div className="socials" aria-label="Resume and contact links">
+                <SocialLink href="/Ronald-M-Kasendwa-Resume.pdf">
+                  View Resume
+                </SocialLink>
+                <a className="email-cta" href={contact.email}>
+                  kasendwaronald@gmail.com
+                  <ArrowIcon />
+                </a>
+              </div>
             </div>
           </div>
         </section>
