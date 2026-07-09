@@ -236,15 +236,13 @@ export default async function Home() {
         >
           <SectionIntro
             eyebrow="Selected work"
-            title="Representative work across products, platforms, and systems."
+            title="A curated collection of products and systems."
           />
           <p className="selected-work-intro">
-            These examples reflect the kind of work I have been trusted to shape
-            and deliver: product direction, interface design, platform
-            engineering, delivery execution, and the technical decisions that
-            keep a product dependable in use. They are selected because they
-            show how I work when the problem is ambiguous, the stakes are real,
-            and the product has to hold up over time.
+            A small selection of products, platforms, and engineering work from
+            more than a decade of building software across fintech, creator
+            platforms, AI, government, enterprise systems, developer tooling,
+            and cloud infrastructure.
           </p>
           <div className="selected-work-grid">
             {selectedWork.map((project) => (
@@ -274,10 +272,11 @@ export default async function Home() {
           <div className="selected-work-close">
             <p className="selected-work-close-line">And many more.</p>
             <p className="selected-work-footnote">
-              This is a curated selection from a much broader body of work that
-              includes enterprise software, government systems, fintech, AI,
-              developer tooling, automation platforms, internal products,
-              consulting engagements, and open source projects.
+              These are representative examples selected from a much broader
+              body of work spanning enterprise software, AI systems, fintech,
+              government platforms, payment systems, developer tooling, cloud
+              infrastructure, automation platforms, consulting engagements, and
+              open source projects.
             </p>
           </div>
         </section>

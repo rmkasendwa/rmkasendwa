@@ -105,62 +105,111 @@ export const capabilities: Capability[] = [
 
 export const selectedWork: Project[] = [
   {
+    name: 'Skattebasserne',
+    category: 'AI Platform',
+    description:
+      'An AI-assisted tax guidance platform for Danish homeowners navigating a high-stakes, regulation-heavy process. It had to make complex advice feel clear and dependable without sacrificing trust or accuracy at critical decision points.',
+    contribution:
+      'I led the product engineering work across the experience and platform layers, shaping the AI-assisted workflow, refining the interaction model, and building a dependable foundation for content, data flow, and user guidance.',
+    technologies: [
+      'TypeScript',
+      'Node.js',
+      'PostgreSQL',
+      'AI workflows',
+      'Next.js',
+    ],
+  },
+  {
     name: 'Locals',
     category: 'Creator Platform',
     description:
-      'A creator platform for publishing, communities, subscriptions, livestreams, and monetization.',
+      'A creator platform for publishing, community building, subscriptions, and direct audience relationships. It serves creators who need a reliable place to distribute content and turn engagement into recurring revenue.',
     contribution:
-      'I helped shape a product experience that made it easier for creators to build direct relationships and grow sustainable audiences.',
-    technologies: ['React', 'Next.js', 'TypeScript', 'Subscription systems'],
-  },
-  {
-    name: 'Skattebasserne',
-    category: 'AI Product',
-    description:
-      'An AI-powered tax advisory platform for Danish homeowners navigating a complex and high-stakes domain.',
-    contribution:
-      'I led the product experience and delivery of AI-assisted guidance, turning a difficult workflow into something clearer and more trustworthy.',
-    technologies: ['TypeScript', 'Node.js', 'PostgreSQL', 'AI workflows'],
+      'I contributed across the product surface and underlying services, helping translate a broad creator vision into a coherent experience while keeping the architecture maintainable as the platform grew.',
+    technologies: [
+      'React',
+      'Next.js',
+      'TypeScript',
+      'Subscriptions',
+      'Realtime',
+    ],
   },
   {
     name: 'awamo360',
-    category: 'FinTech Platform',
+    category: 'Core Banking',
     description:
-      'A financial software platform supporting core banking operations across loans, savings, fixed deposits, shares, support tooling, and production debugging.',
+      'A core banking platform supporting loans, savings, fixed deposits, shares, and the operational tooling behind financial services. It serves financial institutions that need dependable workflows in a regulated environment.',
     contribution:
-      'I worked across the product and platform layers to support high-importance financial workflows with dependable implementation and strong operational visibility.',
-    technologies: ['React', 'NestJS', 'AWS', 'Financial systems'],
+      'I worked across frontend and backend layers to support high-impact financial processes, improve operational visibility, and build features that were robust enough for production use under real-world constraints.',
+    technologies: ['React', 'NestJS', 'AWS', 'Financial workflows'],
   },
   {
     name: 'Formula.Monks Topology',
     category: 'Automation Platform',
     description:
-      'An internal automation and workflow platform built to help teams coordinate work with more clarity and less friction.',
+      'An automation platform for coordinating work across teams, processes, and operational systems. It helps organizations reduce handoff friction and make recurring tasks easier to manage and observe.',
     contribution:
-      'I helped turn complex operational requirements into a reliable product foundation that balanced usability with technical depth.',
+      'I helped turn operational requirements into a product foundation that balanced usability with architectural discipline, allowing the platform to support real workflows without becoming brittle.',
     technologies: ['React', 'TsED', 'Airtable', 'MongoDB', 'TypeScript'],
   },
   {
-    name: 'Sliding Tiles',
-    category: 'Multiplayer Game',
+    name: 'Traccar SaaS',
+    category: 'Fleet Management',
     description:
-      'A modern puzzle game with competitive play, replay flows, progress tracking, and deployment on self-managed infrastructure.',
+      'A fleet management platform that gives operators visibility into vehicle activity, tracking, and operational oversight. It serves businesses that need dependable monitoring and straightforward reporting in day-to-day operations.',
     contribution:
-      'I shaped the product experience and built the real-time systems that made the game feel immediate, social, and dependable.',
-    technologies: ['React', 'WebSockets', 'Realtime', 'Self-hosted infra'],
+      'I built and maintained product features that improved the management experience and strengthened the platform’s reliability in production, with attention to maintainability and operational clarity.',
+    technologies: ['Node.js', 'TypeScript', 'PostgreSQL', 'Tracking', 'SaaS'],
   },
   {
-    name: 'LovePulse',
-    category: 'Mobile App',
+    name: 'Sliding Tiles',
+    category: 'Consumer Product',
     description:
-      'A relationship app focused on thoughtful notifications, message experiences, and daily emotional connection.',
+      'A consumer puzzle game designed for quick, social play and repeat sessions. It serves players who want a simple experience that still feels polished, responsive, and enjoyable over time.',
     contribution:
-      'I focused on the interaction design and product details that made communication feel intentional rather than transactional.',
+      'I shaped the end-to-end product experience and implemented the real-time systems that made multiplayer interaction feel immediate, stable, and easy to support.',
+    technologies: ['React', 'WebSockets', 'Real-time', 'Self-hosted'],
+  },
+  {
+    name: 'Airtable Client',
+    category: 'Developer Platform',
+    description:
+      'A developer-facing client for working with Airtable data in a predictable and typed way. It serves engineers who want a lighter integration path for internal tools and automation work.',
+    contribution:
+      'I owned the SDK design and implementation, focusing on clarity of use, maintainable abstractions, and a surface that developers could rely on without unnecessary ceremony.',
+    technologies: ['TypeScript', 'SDK', 'Developer tooling', 'API client'],
+  },
+  {
+    name: 'Dubai Chamber Match',
+    category: 'Enterprise Platform',
+    description:
+      'An enterprise platform for connecting businesses with relevant opportunities, services, and institutional relationships. It supports a structured matching process that needs strong data handling and careful workflow design.',
+    contribution:
+      'I contributed to the product implementation and architecture, helping connect business rules, interfaces, and backend logic into a system that was dependable for real use.',
+    technologies: ['React', 'Node.js', 'Enterprise', 'Workflow'],
+  },
+  {
+    name: 'PIMIS',
+    category: 'Government Platform',
+    description:
+      'A government platform for the National Information Technology Authority Uganda, built to support structured information management and operational workflows. It serves public-sector stakeholders who need dependable, auditable systems rather than experimental tooling.',
+    contribution:
+      'I worked on the implementation and engineering foundations of a platform that had to balance usability, reliability, and long-term maintainability in a demanding institutional context.',
+    technologies: ['TypeScript', 'Node.js', 'Government', 'Systems'],
+  },
+  {
+    name: 'PayWay Express',
+    category: 'Payment Platform',
+    description:
+      'A production payment platform that streamlines payment processing and operational workflows for merchants and businesses. It supports day-to-day financial operations with a focus on reliability, authorization handling, and predictable service behavior.',
+    contribution:
+      'I contributed across frontend and backend development, implementing scheduled payment workflows, business process automation, authorization logic, API integrations, and production-ready improvements that increased operational efficiency and reliability.',
     technologies: [
-      'Mobile product',
-      'Realtime messaging',
-      'Notifications',
-      'Product design',
+      'TypeScript',
+      'Node.js',
+      'Payments',
+      'API integrations',
+      'Automation',
     ],
   },
 ];
