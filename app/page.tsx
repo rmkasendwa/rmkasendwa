@@ -397,8 +397,9 @@ export default async function Home() {
             <div className="hero-aside">
               <p>
                 I work across product thinking, software engineering, cloud
-                infrastructure, and developer experience to build useful,
-                maintainable products.
+                infrastructure, and developer experience to turn ambiguous ideas
+                into useful products, dependable systems, and clear delivery
+                habits.
               </p>
               <div className="socials" aria-label="Contact links">
                 <SocialLink href={contact.github}>GitHub</SocialLink>
@@ -419,9 +420,9 @@ export default async function Home() {
           aria-labelledby="philosophy-title"
         >
           <SectionIntro
-            eyebrow="Engineering philosophy"
+            eyebrow="How I think"
             title="Good products are built on clear decisions."
-            copy="A few principles guide how I scope, build, and improve software."
+            copy="I work from first principles: define the real problem, make tradeoffs deliberately, and keep the product moving with evidence."
           />
           <div className="principle-grid">
             {principles.map((principle) => (
@@ -442,9 +443,9 @@ export default async function Home() {
           aria-labelledby="work-title"
         >
           <SectionIntro
-            eyebrow="What I do"
-            title="One product. Every layer."
-            copy="I move across disciplines to keep the product coherent—from the problem being solved to the system running in production."
+            eyebrow="What I can own"
+            title="From product framing to production support."
+            copy="I can move from problem definition to implementation and stay involved as the product evolves in the real world."
           />
           <div className="capability-list">
             {capabilities.map((capability, index) => (
@@ -466,11 +467,12 @@ export default async function Home() {
             title="Representative work across products, platforms, and systems."
           />
           <p className="selected-work-intro">
-            Ronald M. Kasendwa is a Product Engineer who turns ideas into
-            useful, maintainable products across frontend, backend, cloud
-            infrastructure, developer experience, and AI-enabled systems. This
-            selection highlights work shaped by clarity, reliability, and a
-            consistent focus on product impact.
+            These examples reflect the kind of work I have been trusted to shape
+            and deliver: product direction, interface design, platform
+            engineering, delivery execution, and the technical decisions that
+            keep a product dependable in use. They are selected because they
+            show how I work when the problem is ambiguous, the stakes are real,
+            and the product has to hold up over time.
           </p>
           <div className="selected-work-grid">
             {selectedWork.map((project) => (
@@ -513,9 +515,9 @@ export default async function Home() {
           aria-labelledby="open-source-title"
         >
           <SectionIntro
-            eyebrow="Open source & developer tools"
-            title="Tools and libraries built to make engineering work easier."
-            copy="A compact set of projects focused on reducing friction, tightening feedback loops, and keeping implementation moving with less repetition."
+            eyebrow="Tools and libraries"
+            title="Small tools, built where they remove friction."
+            copy="I build practical utilities and developer-facing pieces when they make delivery clearer, faster, or more consistent."
           />
           <div className="open-source-grid">
             {openSourceTools.map((tool) => (
@@ -543,7 +545,7 @@ export default async function Home() {
           <SectionIntro
             eyebrow="Technical range"
             title="Tools chosen for the product, not the other way around."
-            copy="Broad enough to own the whole system. Experienced enough to know that the right stack depends on the problem."
+            copy="I work across the stack and keep the implementation practical. The right stack is the one that helps the product ship, scale, and stay maintainable."
           />
           <div className="technology-grid">
             {technologies.map((group) => (
@@ -569,7 +571,7 @@ export default async function Home() {
         >
           <div className="approach-heading">
             <SectionIntro
-              eyebrow="Product mindset"
+              eyebrow="How I approach product development"
               title="Engineering starts before the code."
             />
             <p>
@@ -588,7 +590,7 @@ export default async function Home() {
           </ol>
           <blockquote>
             <p>
-              The goal is not just to ship software. It is to build the right
+              The goal is not only to ship software. It is to build the right
               thing, make it work well, and leave it ready for what comes next.
             </p>
           </blockquote>
@@ -609,8 +611,7 @@ export default async function Home() {
             <div>
               <p>
                 I enjoy conversations about products, engineering, startups, and
-                the difficult work of turning a promising idea into something
-                real.
+                the hard work of turning an idea into something real.
               </p>
               <a className="email-cta" href={contact.email}>
                 kasendwaronald@gmail.com
