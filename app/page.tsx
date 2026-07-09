@@ -40,7 +40,8 @@ function SocialLink({
       className="social-link"
       href={href}
       target={external ? '_blank' : undefined}
-      rel={external ? 'noreferrer' : undefined}
+      rel={external ? 'noopener noreferrer' : undefined}
+      aria-label={typeof children === 'string' ? children : href}
     >
       <span>{children}</span>
       <ArrowIcon />
@@ -121,6 +122,9 @@ export default async function Home() {
 
   return (
     <>
+      <a className="skip-link" href="#content">
+        Skip to content
+      </a>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -144,7 +148,7 @@ export default async function Home() {
         </div>
       </header>
 
-      <main id="top">
+      <main id="content">
         <section className="hero page-shell" aria-labelledby="hero-heading">
           <div className="hero-status">
             <span className="status-dot" />
