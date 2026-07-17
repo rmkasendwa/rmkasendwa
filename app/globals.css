@@ -368,6 +368,44 @@ a {
   background: var(--line);
 }
 
+.hero-visual {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.hero-portrait,
+.approach-photo,
+.project-image {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--paper-deep);
+}
+
+.hero-portrait img,
+.approach-photo img,
+.project-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  filter: saturate(0.82) contrast(0.96);
+}
+
+.hero-portrait {
+  aspect-ratio: 1600 / 620;
+  min-height: 180px;
+  max-height: 36svh;
+}
+
+[data-theme='dark'] .hero-portrait img,
+[data-theme='dark'] .approach-photo img,
+[data-theme='dark'] .project-image img {
+  opacity: 0.82;
+  filter: saturate(0.72) contrast(0.9) brightness(0.82);
+}
+
 .section-intro {
   max-width: 760px;
 }
@@ -571,10 +609,50 @@ a {
     background 220ms ease;
 }
 
+.selected-work-card.featured {
+  grid-column: 1 / -1;
+  padding: clamp(0.8rem, 1.8vw, 1.2rem);
+  gap: 0;
+}
+
 .selected-work-card:hover,
 .selected-work-card:focus-within {
   transform: translateY(-3px);
   background: var(--card-hover);
+}
+
+.project-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.selected-work-card.featured .project-body {
+  padding: clamp(1.25rem, 2vw, 2rem) clamp(0.7rem, 1.2vw, 1rem)
+    clamp(0.55rem, 1vw, 0.8rem);
+  display: grid;
+  grid-template-columns: minmax(220px, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(1rem, 2vw, 2rem);
+  align-items: start;
+}
+
+.selected-work-card.featured .project-contribution,
+.selected-work-card.featured .project-tags {
+  grid-column: 2;
+}
+
+.project-image {
+  aspect-ratio: 16 / 10;
+  border-radius: 0.85rem;
+}
+
+.selected-work-card:not(.featured) .project-image {
+  margin-bottom: 0.35rem;
+}
+
+.selected-work-card.featured .project-image {
+  border-radius: 0.9rem;
 }
 
 .project-meta {
@@ -598,6 +676,35 @@ a {
   font-size: clamp(1.15rem, 1.6vw, 1.45rem);
   font-weight: 560;
   letter-spacing: -0.035em;
+}
+
+.selected-work-card.featured h3 {
+  max-width: 620px;
+  font-size: clamp(1.55rem, 3vw, 3rem);
+  letter-spacing: -0.06em;
+  line-height: 1;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.project-link svg {
+  width: 0.7em;
+  flex: 0 0 auto;
+  transition: transform 180ms ease;
+}
+
+.project-link:hover,
+.project-link:focus-visible {
+  color: var(--accent);
+}
+
+.project-link:hover svg,
+.project-link:focus-visible svg {
+  transform: translate(3px, -3px);
 }
 
 .project-description,
@@ -777,16 +884,22 @@ a {
 
 .approach-heading {
   display: grid;
-  grid-template-columns: 1.25fr 0.75fr;
-  gap: 4rem;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 0.32fr);
+  gap: clamp(2.5rem, 6vw, 6rem);
   align-items: end;
 }
 
-.approach-heading > p {
+.approach-heading-copy > p {
   max-width: 500px;
-  margin: 0 0 0.3rem;
+  margin: 1.8rem 0 0;
   color: var(--muted);
   line-height: 1.7;
+}
+
+.approach-photo {
+  aspect-ratio: 4 / 5;
+  align-self: stretch;
+  min-height: 360px;
 }
 
 .approach-list {
@@ -919,8 +1032,13 @@ blockquote p {
     align-items: start;
   }
 
-  .approach-heading > p {
+  .approach-heading-copy > p {
     margin-top: 1rem;
+  }
+
+  .approach-photo {
+    max-width: 420px;
+    min-height: auto;
   }
 
   .contact-grid > div {
@@ -989,6 +1107,19 @@ blockquote p {
   .principle-grid,
   .selected-work-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hero-portrait {
+    min-height: 150px;
+  }
+
+  .selected-work-card.featured .project-body {
+    grid-template-columns: 1fr;
+  }
+
+  .selected-work-card.featured .project-contribution,
+  .selected-work-card.featured .project-tags {
+    grid-column: auto;
   }
 
   .technology-grid {

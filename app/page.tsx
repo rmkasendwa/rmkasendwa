@@ -1,14 +1,18 @@
 import { cookies } from 'next/headers';
+import Image from 'next/image';
 import { ThemeControl } from '@/components/theme-control';
 import {
+  approachPhoto,
   approach,
   capabilities,
   contact,
+  heroPortrait,
   openSourceTools,
   principles,
   selectedWork,
   technologies,
 } from '@/content/profile';
+import type { Project } from '@/content/profile';
 
 type ThemePreference = 'light' | 'system' | 'dark';
 
@@ -67,11 +71,119 @@ function SectionIntro({
   );
 }
 
+function EditorialImage({
+  src,
+  alt,
+  className,
+  width,
+  height,
+  sizes,
+  priority = false,
+}: {
+  src: string;
+  alt: string;
+  className: string;
+  width: number;
+  height: number;
+  sizes: string;
+  priority?: boolean;
+}) {
+  return (
+    <figure className={className}>
+      <Image
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        sizes={sizes}
+        priority={priority}
+      />
+    </figure>
+  );
+}
+
+function ProjectTitle({ project }: { project: Project }) {
+  if (!project.href) {
+    return <h3>{project.name}</h3>;
+  }
+
+  const external = project.href.startsWith('http');
+
+  return (
+    <h3>
+      <a
+        className="project-link"
+        href={project.href}
+        target={external ? '_blank' : undefined}
+        rel={external ? 'noopener noreferrer' : undefined}
+      >
+        <span>{project.name}</span>
+        <ArrowIcon />
+      </a>
+    </h3>
+  );
+}
+
+function ProjectCard({
+  project,
+  priorityImage,
+}: {
+  project: Project;
+  priorityImage: boolean;
+}) {
+  const hasImage = Boolean(project.image && project.imageAlt);
+
+  return (
+    <article
+      className={`selected-work-card${project.featured ? ' featured' : ''}`}
+    >
+      {hasImage ? (
+        <figure className="project-image">
+          <Image
+            src={project.image as string}
+            alt={project.imageAlt as string}
+            width={1600}
+            height={1000}
+            sizes={
+              project.featured
+                ? '(min-width: 900px) 1360px, calc(100vw - 48px)'
+                : '(min-width: 900px) 680px, calc(100vw - 48px)'
+            }
+            priority={priorityImage}
+          />
+        </figure>
+      ) : null}
+      <div className="project-body">
+        <div className="project-meta">
+          <p className="project-category">{project.category}</p>
+          <ProjectTitle project={project} />
+        </div>
+        <p className="project-description">{project.description}</p>
+        <div className="project-contribution">
+          <p className="project-label">Primary engineering contribution</p>
+          <p>{project.contribution}</p>
+        </div>
+        <ul
+          className="project-tags"
+          aria-label={`${project.name} technologies`}
+        >
+          {project.technologies.map((tag) => (
+            <li key={tag}>{tag}</li>
+          ))}
+        </ul>
+      </div>
+    </article>
+  );
+}
+
 export default async function Home() {
   const cookieStore = await cookies();
   const savedTheme = cookieStore.get('theme')?.value;
   const themePreference = isThemePreference(savedTheme) ? savedTheme : 'system';
   const siteUrl = 'https://rmkasendwa.com';
+  const firstFeaturedProject = selectedWork.find(
+    (project) => project.featured && project.image,
+  );
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -180,10 +292,20 @@ export default async function Home() {
               </div>
             </div>
           </div>
-          <div className="experience-line">
-            <p>Deep experience in software engineering</p>
-            <div aria-hidden="true" />
-            <p>From first conversation to production</p>
+          <div className="hero-visual">
+            <EditorialImage
+              className="hero-portrait"
+              src={heroPortrait.src}
+              alt={heroPortrait.alt}
+              width={1600}
+              height={620}
+              sizes="(min-width: 900px) 1360px, calc(100vw - 48px)"
+            />
+            <div className="experience-line">
+              <p>Deep experience in software engineering</p>
+              <div aria-hidden="true" />
+              <p>From first conversation to production</p>
+            </div>
           </div>
         </section>
 
@@ -246,27 +368,11 @@ export default async function Home() {
           </p>
           <div className="selected-work-grid">
             {selectedWork.map((project) => (
-              <article className="selected-work-card" key={project.name}>
-                <div className="project-meta">
-                  <p className="project-category">{project.category}</p>
-                  <h3>{project.name}</h3>
-                </div>
-                <p className="project-description">{project.description}</p>
-                <div className="project-contribution">
-                  <p className="project-label">
-                    Primary engineering contribution
-                  </p>
-                  <p>{project.contribution}</p>
-                </div>
-                <ul
-                  className="project-tags"
-                  aria-label={`${project.name} technologies`}
-                >
-                  {project.technologies.map((tag) => (
-                    <li key={tag}>{tag}</li>
-                  ))}
-                </ul>
-              </article>
+              <ProjectCard
+                key={project.name}
+                project={project}
+                priorityImage={project.name === firstFeaturedProject?.name}
+              />
             ))}
           </div>
           <div className="selected-work-close">
@@ -341,14 +447,25 @@ export default async function Home() {
           aria-labelledby="approach-title"
         >
           <div className="approach-heading">
-            <SectionIntro
-              eyebrow="How I approach product development"
-              title="Engineering starts before the code."
+            <div className="approach-heading-copy">
+              <SectionIntro
+                eyebrow="How I approach product development"
+                title="Engineering starts before the code."
+              />
+              <p>
+                Building a product means navigating uncertainty, making
+                tradeoffs, and keeping technical work connected to user and
+                business value.
+              </p>
+            </div>
+            <EditorialImage
+              className="approach-photo"
+              src={approachPhoto.src}
+              alt={approachPhoto.alt}
+              width={900}
+              height={1125}
+              sizes="(min-width: 900px) 360px, calc(100vw - 48px)"
             />
-            <p>
-              Building a product means navigating uncertainty, making tradeoffs,
-              and keeping technical work connected to user and business value.
-            </p>
           </div>
           <ol className="approach-list">
             {approach.map(([title, copy], index) => (

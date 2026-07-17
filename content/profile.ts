@@ -15,6 +15,10 @@ export interface Project {
   description: string;
   contribution: string;
   technologies: string[];
+  image?: string;
+  imageAlt?: string;
+  href?: string;
+  featured?: boolean;
 }
 
 export interface OpenSourceTool {
@@ -31,6 +35,11 @@ export interface TechnologyGroup {
 
 export type ApproachStep = [string, string];
 
+export interface EditorialImage {
+  src: string;
+  alt: string;
+}
+
 export interface ContactLinks {
   github: string;
   linkedin: string;
@@ -41,6 +50,16 @@ export const contact: ContactLinks = {
   github: 'https://github.com/rmkasendwa',
   linkedin: 'https://www.linkedin.com/in/rmkasendwa',
   email: 'mailto:kasendwaronald@gmail.com',
+};
+
+export const heroPortrait: EditorialImage = {
+  src: '/images/ronald-editorial-portrait-placeholder.webp',
+  alt: 'Ronald Kasendwa in a quiet editorial portrait near his workspace.',
+};
+
+export const approachPhoto: EditorialImage = {
+  src: '/images/working-photo-placeholder.webp',
+  alt: 'Ronald Kasendwa working through product and engineering notes at a desk.',
 };
 
 export const principles: Principle[] = [
@@ -107,6 +126,10 @@ export const selectedWork: Project[] = [
   {
     name: 'Skattebasserne',
     category: 'AI Platform',
+    image: '/images/projects/skattebasserne-placeholder.webp',
+    imageAlt:
+      'Browser-style preview of the Skattebasserne AI tax guidance workflow.',
+    featured: true,
     description:
       'An AI-assisted tax guidance platform for Danish homeowners navigating a high-stakes, regulation-heavy process. It had to make complex advice feel clear and dependable without sacrificing trust or accuracy at critical decision points.',
     contribution:
@@ -122,6 +145,10 @@ export const selectedWork: Project[] = [
   {
     name: 'Locals',
     category: 'Creator Platform',
+    image: '/images/projects/locals-placeholder.webp',
+    imageAlt:
+      'Browser-style preview of a creator publishing and community platform.',
+    featured: true,
     description:
       'A creator platform for publishing, community building, subscriptions, and direct audience relationships. It serves creators who need a reliable place to distribute content and turn engagement into recurring revenue.',
     contribution:
@@ -137,6 +164,9 @@ export const selectedWork: Project[] = [
   {
     name: 'awamo360',
     category: 'Core Banking',
+    image: '/images/projects/awamo360-placeholder.webp',
+    imageAlt:
+      'Compact product screenshot preview for a core banking operations platform.',
     description:
       'A core banking platform supporting loans, savings, fixed deposits, shares, and the operational tooling behind financial services. It serves financial institutions that need dependable workflows in a regulated environment.',
     contribution:
