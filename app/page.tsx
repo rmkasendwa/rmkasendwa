@@ -502,7 +502,7 @@ export default async function Home() {
                 the hard work of turning an idea into something real.
               </p>
               <div className="socials" aria-label="Resume and contact links">
-                <SocialLink href="/Ronald-M-Kasendwa-Resume.pdf">
+                <SocialLink href="https://drive.google.com/file/d/1cLoltLQBoGfKqyHL9CoLE6y1Hg8_jTJZ/view?usp=sharing">
                   View Resume
                 </SocialLink>
                 <a className="email-cta" href={contact.email}>
