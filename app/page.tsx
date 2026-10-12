@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { ThemeControl } from '@/components/theme-control';
 import {
   approach,
+  approachPhoto,
   capabilities,
   contact,
   openSourceTools,
