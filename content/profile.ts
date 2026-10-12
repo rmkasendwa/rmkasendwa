@@ -131,7 +131,7 @@ export const selectedWork: Project[] = [
     contribution:
       'I am designing and building the full product: upload flows, persistent job processing, storage integration, transcription orchestration, and the developer experience for running the stack locally.',
     technologies: ['Next.js', 'TypeScript', 'PostgreSQL', 'Whisper', 'Docker'],
-    href: 'https://github.com/Infinite-Debugger/sonavra',
+    href: '/work/sonavra',
   },
   {
     name: 'Rumble Unified Payment Flow',
