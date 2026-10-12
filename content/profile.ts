@@ -135,6 +135,7 @@ export const selectedWork: Project[] = [
   },
   {
     name: 'Rumble Unified Payment Flow',
+    href: '/work/unified-payments',
     category: 'Payments · Professional work',
     description:
       'A unified checkout experience spanning plan selection, billing details, promotional codes, saved cards, new cards, and digital wallets.',
