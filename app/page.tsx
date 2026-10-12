@@ -252,8 +252,8 @@ export default async function Home() {
         </a>
         <div className="site-header-actions">
           <nav aria-label="Main navigation">
-            <a href="#work">What I do</a>
-            <a href="#approach">Approach</a>
+            <a href="#work">Selected work</a>
+            <a href="#expertise">Expertise</a>
             <a href="#contact">Contact</a>
           </nav>
           <ThemeControl initialPreference={themePreference} />
@@ -270,17 +270,14 @@ export default async function Home() {
             <div>
               <p className="hero-name">Ronald M. Kasendwa</p>
               <h1 id="hero-heading">
-                Turning ideas
+                Building products
                 <br />
-                into <em>products.</em>
+                that <em>work.</em>
               </h1>
             </div>
             <div className="hero-aside">
               <p>
-                I work across product thinking, software engineering, cloud
-                infrastructure, and developer experience to turn ambiguous ideas
-                into useful products, dependable systems, and clear delivery
-                habits.
+                I’m a product engineer working from interface to infrastructure. I build practical, dependable software across payments, platforms, and developer tools.
               </p>
               <div className="socials" aria-label="Contact links">
                 <SocialLink href={contact.github}>GitHub</SocialLink>
@@ -310,61 +307,16 @@ export default async function Home() {
         </section>
 
         <section
-          className="philosophy page-shell"
-          aria-labelledby="philosophy-title"
-        >
-          <SectionIntro
-            eyebrow="How I think"
-            title="Good products are built on clear decisions."
-            copy="I work from first principles: define the real problem, make tradeoffs deliberately, and keep the product moving with evidence."
-          />
-          <div className="principle-grid">
-            {principles.map((principle) => (
-              <article className="principle-card" key={principle.number}>
-                <span>{principle.number}</span>
-                <div>
-                  <h3>{principle.title}</h3>
-                  <p>{principle.copy}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section
-          className="capabilities page-shell"
-          id="work"
-          aria-labelledby="work-title"
-        >
-          <SectionIntro
-            eyebrow="What I can own"
-            title="From product framing to production support."
-            copy="I can move from problem definition to implementation and stay involved as the product evolves in the real world."
-          />
-          <div className="capability-list">
-            {capabilities.map((capability, index) => (
-              <article className="capability-row" key={capability.title}>
-                <span>{String(index + 1).padStart(2, '0')}</span>
-                <h3>{capability.title}</h3>
-                <p>{capability.copy}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section
           className="selected-work page-shell"
+          id="work"
           aria-labelledby="selected-work-title"
         >
           <SectionIntro
             eyebrow="Selected work"
-            title="A curated collection of products and systems."
+            title="Real products. Real engineering decisions."
           />
           <p className="selected-work-intro">
-            A small selection of products, platforms, and engineering work from
-            more than a decade of building software across fintech, creator
-            platforms, AI, government, enterprise systems, developer tooling,
-            and cloud infrastructure.
+            Selected examples of the products and systems I have helped build, from payments and creator platforms to developer tooling and enterprise software.
           </p>
           <div className="selected-work-grid">
             {selectedWork.map((project) => (
@@ -388,6 +340,49 @@ export default async function Home() {
         </section>
 
         <section
+          className="philosophy page-shell"
+          aria-labelledby="philosophy-title"
+        >
+          <SectionIntro
+            eyebrow="How I think"
+            title="Good products are built on clear decisions."
+            copy="I work from first principles: define the real problem, make tradeoffs deliberately, and keep the product moving with evidence."
+          />
+          <div className="principle-grid">
+            {principles.map((principle) => (
+              <article className="principle-card" key={principle.number}>
+                <span>{principle.number}</span>
+                <div>
+                  <h3>{principle.title}</h3>
+                  <p>{principle.copy}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section
+          className="capabilities page-shell"
+          id="expertise"
+          aria-labelledby="work-title"
+        >
+          <SectionIntro
+            eyebrow="What I can own"
+            title="From product framing to production support."
+            copy="I can move from problem definition to implementation and stay involved as the product evolves in the real world."
+          />
+          <div className="capability-list">
+            {capabilities.map((capability, index) => (
+              <article className="capability-row" key={capability.title}>
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <h3>{capability.title}</h3>
+                <p>{capability.copy}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section
           className="open-source page-shell"
           aria-labelledby="open-source-title"
         >
@@ -406,7 +401,7 @@ export default async function Home() {
                 <p className="tool-description">{tool.description}</p>
                 {tool.link ? (
                   <a className="tool-link" href={tool.link}>
-                    View placeholder
+                    Explore project
                     <span aria-hidden="true">↗</span>
                   </a>
                 ) : null}
