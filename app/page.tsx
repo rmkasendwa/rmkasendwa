@@ -2,11 +2,10 @@ import { cookies } from 'next/headers';
 import Image from 'next/image';
 import { ThemeControl } from '@/components/theme-control';
 import {
-  approachPhoto,
   approach,
+  approachPhoto,
   capabilities,
   contact,
-  heroPortrait,
   openSourceTools,
   principles,
   selectedWork,
@@ -137,7 +136,7 @@ function ProjectCard({
     <article
       className={`selected-work-card${project.featured ? ' featured' : ''}`}
     >
-      {hasImage ? (
+      {hasImage && !project.image?.includes("placeholder") ? (
         <figure className="project-image">
           <Image
             src={project.image as string}
@@ -261,7 +260,7 @@ export default async function Home() {
       </header>
 
       <main id="content">
-        <section className="hero page-shell" aria-labelledby="hero-heading">
+        <section className="hero page-shell hero-v2" aria-labelledby="hero-heading">
           <div className="hero-status">
             <span className="status-dot" />
             Product Engineer · Kampala, Uganda
@@ -270,9 +269,9 @@ export default async function Home() {
             <div>
               <p className="hero-name">Ronald M. Kasendwa</p>
               <h1 id="hero-heading">
-                Building products
+                I build software
                 <br />
-                that <em>work.</em>
+                <em>that matters.</em>
               </h1>
             </div>
             <div className="hero-aside">
@@ -289,31 +288,20 @@ export default async function Home() {
               </div>
             </div>
           </div>
-          <div className="hero-visual">
-            <EditorialImage
-              className="hero-portrait"
-              src={heroPortrait.src}
-              alt={heroPortrait.alt}
-              width={1600}
-              height={620}
-              sizes="(min-width: 900px) 1360px, calc(100vw - 48px)"
-            />
-            <div className="experience-line">
-              <p>Deep experience in software engineering</p>
-              <div aria-hidden="true" />
-              <p>From first conversation to production</p>
-            </div>
+          <div className="hero-bottom">
+            <a href="#work" className="hero-scroll">Explore selected work <span aria-hidden="true">↓</span></a>
+            <p>Product engineering · Payments · Platforms · Open source</p>
           </div>
         </section>
 
         <section
-          className="selected-work page-shell"
+          className="selected-work page-shell work-v2"
           id="work"
           aria-labelledby="selected-work-title"
         >
           <SectionIntro
             eyebrow="Selected work"
-            title="Real products. Real engineering decisions."
+            title="Proof is in the work."
           />
           <p className="selected-work-intro">
             Selected examples of the products and systems I have helped build, from payments and creator platforms to developer tooling and enterprise software.
