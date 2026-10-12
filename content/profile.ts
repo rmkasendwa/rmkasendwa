@@ -124,6 +124,26 @@ export const capabilities: Capability[] = [
 
 export const selectedWork: Project[] = [
   {
+    name: 'Sonavra',
+    category: 'Open-source · Audio infrastructure',
+    description:
+      'A self-hosted transcription workspace built around private object storage, durable background processing, and an independently operated speech-to-text pipeline.',
+    contribution:
+      'I am designing and building the full product: upload flows, persistent job processing, storage integration, transcription orchestration, and the developer experience for running the stack locally.',
+    technologies: ['Next.js', 'TypeScript', 'PostgreSQL', 'Whisper', 'Docker'],
+    href: '/work/sonavra',
+  },
+  {
+    name: 'Rumble Unified Payment Flow',
+    category: 'Payments · Professional work',
+    description:
+      'A unified checkout experience spanning plan selection, billing details, promotional codes, saved cards, new cards, and digital wallets.',
+    contribution:
+      'I developed key frontend payment components and integration work, including payment status, card details, payment method selection, and Apple Pay and Google Pay routing.',
+    technologies: ['React', 'TypeScript', 'Payments', 'Component systems'],
+  },
+
+  {
     name: 'Skattebasserne',
     category: 'AI Platform',
     image: '/images/projects/skattebasserne-placeholder.webp',
@@ -250,40 +270,40 @@ export const openSourceTools: OpenSourceTool[] = [
     description:
       'A lightweight TypeScript SDK for Airtable workflows and data access.',
     type: 'SDK',
-    link: '#',
+    link: '',
   },
   {
     name: 'mui-extensions / @infinite-debugger/react-mui',
     description:
       'A compact set of MUI-focused extensions for faster UI composition.',
     type: 'Component library',
-    link: '#',
+    link: '',
   },
   {
     name: '@infinite-debugger/swagger-to-ts',
     description:
       'A utility for turning Swagger schemas into TypeScript interfaces.',
     type: 'Utility',
-    link: '#',
+    link: '',
   },
   {
     name: 'infinite-debugger/rmk-utils',
     description: 'A handful of practical helpers for everyday developer tasks.',
     type: 'Utility',
-    link: '#',
+    link: '',
   },
   {
     name: 'SVG Map Extra',
     description: 'A small utility for making richer SVG-based map experiences.',
     type: 'Utility',
-    link: '#',
+    link: '',
   },
   {
     name: 'cropit contribution',
     description:
       'A thoughtful contribution to a project focused on better image cropping flows.',
     type: 'Contribution',
-    link: '#',
+    link: '',
   },
 ];
 
